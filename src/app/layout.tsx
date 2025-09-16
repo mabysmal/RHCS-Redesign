@@ -23,7 +23,7 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'RHCS - Royal Horticultural Capital Society',
+  title: 'RHCS - Royal Horticultural Centre Society',
   description: 'Preserving Riverview Lands through education, advocacy, and community engagement',
 }
 

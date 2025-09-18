@@ -1,20 +1,9 @@
+import Navigation from "./components/Navigation"
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="bg-darkgreen text-cream px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-display font-bold">RHCS</h1>
-          <div className="hidden md:flex space-x-8 font-body">
-            <a href="#" className="hover:text-golden transition-colors">Home</a>
-            <a href="#" className="hover:text-golden transition-colors">About</a>
-            <a href="#" className="hover:text-golden transition-colors">Visit & Explore</a>
-            <a href="#" className="hover:text-golden transition-colors">Get Involved</a>
-            <a href="#" className="hover:text-golden transition-colors">News & Advocacy</a>
-            <a href="#" className="hover:text-golden transition-colors">Resource Library</a>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-forest-light text-cream py-20 px-6 animate-fade-in">

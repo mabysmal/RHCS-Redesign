@@ -1,36 +1,200 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+For questions and inquiries contact me by maby.garza@gmail.co
 
-## Getting Started
 
-First, run the development server:
+# Responsive Navigation Component
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Overview
+
+A fully responsive navigation component built for a non-profit organization website using Next.js, TypeScript, and Tailwind CSS. The navigation automatically adapts between a hamburger menu for mobile/tablet devices and a full navigation bar for desktop screens.
+
+## Features
+
+- **Responsive Design**: Automatically switches between mobile hamburger menu and desktop navigation bar
+- **Dropdown Menus**: Expandable submenus for main navigation items
+- **Hover Effects**: Smooth transitions with leaf icons on hover
+- **Scroll-to-Section**: Automatic scrolling to page sections using anchor IDs
+- **Smooth Animations**: CSS transitions for all interactive elements
+- **TypeScript**: Fully typed for better development experience
+
+## File Structure
+
+```
+src/
+├── components/
+│   ├── Navigation.tsx          # Main navigation component
+│   └── icons/
+│       ├── HamburgerIcon.tsx   # Hamburger menu icon
+│       ├── CloseIcon.tsx       # Close menu icon
+│       └── LeafIcon.tsx        # Decorative leaf icon
+├── data/
+│   └── menuData.ts            # Navigation menu structure
+└── hooks/
+    └── useScrollToSection.ts   # Hook for smooth scrolling
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Navigation Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The navigation supports the following main pages with their respective subpages:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Main Pages
+1. **Home** - Landing page
+2. **Events and News** - Events and updates
+3. **Plan Your Visit** - Visitor information and maps
+4. **Photo Gallery** - Image collections
+5. **Support Us** - Membership, donations, volunteering
+6. **About Us** - Organization information
+7. **Resource Library** - Documents and resources
 
-## Learn More
+### Subpages
+Each main page (except Home and Photo Gallery) contains subpages that link to specific sections on the main page using anchor IDs.
 
-To learn more about Next.js, take a look at the following resources:
+## Implementation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Add Navigation to Layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+// app/layout.tsx
+import Navigation from '@/components/Navigation';
 
-## Deploy on Vercel
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Navigation />
+        <main>{children}</main>
+      </body>
+    </html>
+  );
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Create Page Sections with IDs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```typescript
+// Example: app/about/page.tsx
+export default function AboutPage() {
+  return (
+    <div>
+      <section id="mission-vision">
+        <h2>Mission, Vision, Founding History</h2>
+        {/* Content */}
+      </section>
+      
+      <section id="riverview-lands">
+        <h2>About Riverview Lands and Finnie's Garden</h2>
+        {/* Content */}
+      </section>
+      
+      <section id="achievements">
+        <h2>Our Achievements</h2>
+        {/* Content */}
+      </section>
+      
+      <section id="memoriam">
+        <h2>In Memoriam</h2>
+        {/* Content */}
+      </section>
+    </div>
+  );
+}
+```
+
+### 3. Optional: Use Scroll Hook
+
+```typescript
+// In any page component
+import { useScrollToSection } from '@/hooks/useScrollToSection';
+
+export default function PageComponent() {
+  useScrollToSection(); // Enables smooth scrolling to sections
+  
+  return (
+    // Your page content
+  );
+}
+```
+
+## Customization
+
+### Updating Menu Items
+
+Edit `src/data/menuData.ts` to modify the navigation structure:
+
+```typescript
+export const menuData: MenuItem[] = [
+  {
+    name: "New Page",
+    href: "/new-page",
+    subPages: [
+      { name: "Section 1", href: "/new-page", id: "section-1" },
+      { name: "Section 2", href: "/new-page", id: "section-2" },
+    ],
+  },
+  // ... other menu items
+];
+```
+
+### Styling Customization
+
+The component uses Tailwind CSS classes. Key customization points:
+
+- **Colors**: Change `green-` classes to your brand colors
+- **Breakpoints**: Modify `lg:` breakpoints in the component (currently 1024px)
+- **Spacing**: Adjust `space-x-` and `space-y-` classes
+- **Transitions**: Modify `transition-` and `duration-` classes
+
+### SVG Icons
+
+The component uses three SVG icons located in the `public/` folder:
+- `/hambmenu.svg` - Hamburger menu icon
+- `/closeicon.svg` - Close menu icon  
+- `/leaf.svg` - Decorative leaf icon
+
+To replace icons, simply update the SVG files in the public folder while maintaining the same filenames.
+
+## Responsive Behavior
+
+- **Mobile/Tablet (< 1024px)**: Hamburger menu with slide-out navigation
+- **Desktop (≥ 1024px)**: Horizontal navigation bar with dropdown menus
+
+## Browser Support
+
+- Chrome 91+
+- Firefox 90+
+- Safari 14+
+- Edge 91+
+
+## Dependencies
+
+- Next.js 13+
+- React 18+
+- TypeScript 5+
+- Tailwind CSS 3+
+
+## Contributing
+
+When adding new pages or sections:
+
+1. Update `menuData.ts` with the new navigation items
+2. Ensure page sections have matching IDs for scroll functionality
+3. Test responsive behavior across different screen sizes
+4. Verify accessibility with screen readers
+
+## Troubleshooting
+
+### Smooth Scrolling Not Working
+- Ensure section IDs match exactly with the `id` field in `menuData.ts`
+- Check that the target page has loaded before scrolling occurs
+- Verify the `useScrollToSection` hook is implemented on the target page
+
+### Mobile Menu Not Closing
+- Check that all click handlers call `setIsMobileMenuOpen(false)`
+- Ensure the mobile menu state is properly managed in the component
+
+### Dropdown Menus Not Appearing
+- Verify `z-index` values are not conflicting with other components
+- Check that the dropdown positioning is correct for your layout

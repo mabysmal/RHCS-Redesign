@@ -16,21 +16,21 @@ export interface SubPage {
       href: "/",
     },
     {
-      name: "Schedule and News",
-      href: "/schedule-news",
+      name: "Tree Tours and Events",
+      href: "/events",
       subPages: [
-        { name: "Full Calendar/Schedule", href: "/schedule-news", id: "calendar" },
-        { name: "What's Happening", href: "/schedule-news", id: "whats-happening" },
-        { name: "Latest Social Media", href: "/schedule-news", id: "social-media" },
+        { name: "Schedule", href: "/events", id: "calendar" },
+        { name: "Maps and Virtual Tree Tour", href: "/events", id: "maps-tour" },
+        { name: "Interactive Tree Survey Map", href: "/events", id: "tree-map" },
+        { name: "Visit Information", href: "/events", id: "plan-visit" },
       ],
     },
     {
-      name: "Plan Your Visit",
-      href: "/plan-visit",
+      name: "News & Updates",
+      href: "/news",
       subPages: [
-        { name: "Maps and Virtual Tree Tour", href: "/plan-visit", id: "maps-tour" },
-        { name: "Interactive Tree Survey Map", href: "/plan-visit", id: "survey-map" },
-        { name: "Visit Information", href: "/plan-visit", id: "visit-info" },
+        { name: "Latest Social Media", href: "/news", id: "social-media" },
+        { name: "What's Happening", href: "/news", id: "whats-happening" },
       ],
     },
     {

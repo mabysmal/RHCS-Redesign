@@ -27,7 +27,6 @@ collections:
         name: "endTime"
         widget: "datetime"
         time_format: "hh:mm A" # e.g., 02:00 PM
-        format: "hh:mm A"
         hint: "The time the event will finish."
       - label: "Location"
         name: "location"

@@ -42,8 +42,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${tektonFont.className} ${inter.variable} ${poppins.variable} ${openSans.variable}`}>
+      <head>
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+      </head>
       <body className="font-sans bg-background text-primary antialiased">
         {children}
+        
       </body>
     </html>
   )

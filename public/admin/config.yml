@@ -23,12 +23,11 @@ collections:
         time_format: "hh:mm A" # example: 10:00 AM
         format: "YYYY-MM-DD hh:mm A" 
         hint: "Time is in Coquitlam, BC (America/Vancouver). "
-      - label: "End Date and Time"
-        name: "endDateTime"
+      - label: "End Time"
+        name: "endTime"
         widget: "datetime"
-        date_format: "YYYY-MM-DD"
         time_format: "hh:mm A" # e.g., 02:00 PM
-        format: "YYYY-MM-DD hh:mm A"
+        format: "hh:mm A"
         hint: "The time the event will finish."
       - label: "Location"
         name: "location"

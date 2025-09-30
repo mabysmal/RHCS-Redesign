@@ -1,28 +1,11 @@
-'use client'
+// Remover 'use client'
 import Navigation from "./components/Navigation"
-import { useState, useEffect } from 'react';
-import { Event } from '@/utils/eventUtils';
-import { getNextEventClient } from '@/utils/clientEventUtils';
+import { getNextEvent } from '@/utils/eventUtils';
 import Schedule from "./components/Schedule";
 
 export default function Home() {
-  const [nextEvent, setNextEvent] = useState<Event | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadEvents = async () => {
-      try {
-        const next = await getNextEventClient();
-        setNextEvent(next);
-      } catch (error) {
-        console.error('Error loading events:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadEvents();
-  }, []);
+  // Esto se ejecuta en el servidor durante el build
+  const nextEvent = getNextEvent();
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,16 +38,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-darkgreen mb-6">
             Upcoming Events
           </h2>
-          {loading ? (
-            <div className="animate-pulse">
-              <div className="h-32 bg-gray-200 rounded-xl"></div>
-            </div>
-          ) : (
-            <Schedule 
-              nextEvent={nextEvent}
-              showFullSchedule={false}
-            />
-          )}
+          <Schedule 
+            nextEvent={nextEvent}
+            showFullSchedule={false}
+          />
         </div>
       </section>
 

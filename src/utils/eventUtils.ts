@@ -13,6 +13,11 @@ export interface Event {
   slug: string;
 }
 
+// toren's note ;)
+// this is trying to read events out of a directory, which is a local kind of thing
+// is the events directory kept in the public folder uploaded with the site? 
+// I forget how but I'm pretty sure there's a similar way to loop over all of those. Nextjs probably has something built in
+
 export function getAllEvents(): Event[] {
   const eventsDirectory = path.join(process.cwd(), 'src/content/events');
   

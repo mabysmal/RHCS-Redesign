@@ -1,7 +1,7 @@
 // Remover 'use client'
 import Navigation from "./components/Navigation"
 import { getNextEvent } from '@/utils/eventUtils';
-import Schedule from "./components/Schedule";
+import HomePageEvents from "./components/HomePageEvent";
 
 export default function Home() {
   // Esto se ejecuta en el servidor durante el build
@@ -38,10 +38,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-darkgreen mb-6">
             Upcoming Events
           </h2>
-          <Schedule 
-            nextEvent={nextEvent}
-            showFullSchedule={false}
-          />
+          <HomePageEvents/>
         </div>
       </section>
 

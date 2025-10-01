@@ -4,17 +4,17 @@ backend:
 
 media_folder: public/uploads
 public_folder: /uploads
-
 display_url: https://rhcs.netlify.app/
 logo_url: /logo.png
 
 collections:
-  - name: "tree-tours" 
+  - name: "tree-tours"
     label: "Tree Tours"
-    folder: "src/content/events" 
-    create: true 
+    folder: "src/content/events"
+    create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields: 
+    preview_path: /events  # Opcional: ruta para vista previa en vivo
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - label: "Start Date and Time"
         name: "startDateTime"

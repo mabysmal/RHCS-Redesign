@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-forest-light text-cream py-20 px-6 animate-fade-in">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-8 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-tektonFont font-bold mb-8 animate-slide-up">
           The Riverview Horticultural Centre Society
           </h1>
           <p className="text-lg md:text-xl font-body mb-12 animate-slide-up">

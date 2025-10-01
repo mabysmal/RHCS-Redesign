@@ -20,7 +20,7 @@ const OtherUpcomingEvents: React.FC<OtherUpcomingEventsProps> = ({ events }) => 
           <div className="flex flex-col justify-center sm:flex-row gap-6 h-full">
             {/* Date Display */}
             <div className="flex justify-center sm:justify-start sm:self-stretch">
-              <div className="bg-darkgreen flex flex-col justify-center px-2 py-4 sm:py-0 min-w-[5rem] sm:w-[5rem] text-center sm:h-full">
+              <div className="bg-darkgreen flex flex-col justify-center py-4 sm:py-0 min-w-[5rem] sm:w-[5rem] text-center sm:h-full">
                 <div className="text-xs pt-2 font-bold text-cream uppercase tracking-wide">
                   {event.month}
                 </div>
@@ -61,7 +61,7 @@ const OtherUpcomingEvents: React.FC<OtherUpcomingEventsProps> = ({ events }) => 
 
               {/* Description - truncated for card view */}
               {event.description && (
-                <div className="mt-2 text-sm text-gray-700 line-clamp-2">
+                <div className="my-2 text-sm text-gray-700 line-clamp-2">
                   <div dangerouslySetInnerHTML={{ 
                     __html: event.description.replace(/<[^>]*>/g, '').substring(0, 100) + '...'
                   }} />

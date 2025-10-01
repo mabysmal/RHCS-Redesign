@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { getNextEvent, getOtherUpcomingEvents } from '@/utils/eventUtils';
 import UpcomingNextEvent from './UpcomingNextEvent';

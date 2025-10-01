@@ -1,13 +1,12 @@
-import { getNextEvent, getOtherUpcomingEvents } from '@/utils/eventUtils';
+import { getSerializedNextEvent, getSerializedOtherUpcomingEvents } from '@/utils/eventUtils';
 import UpcomingNextEvent from '../components/UpcomingNextEvent';
 import OtherUpcomingEvents from '../components/OtherUpcomingEvents';
 import ComingSoon from '../components/ComingSoonEvents';
-import Navigation from '../components/Navigation'; // Assuming you want navigation here
-
+import Navigation from '../components/Navigation';
 
 export default function EventsPage() {
-  const nextEvent = getNextEvent();
-  const otherEvents = getOtherUpcomingEvents();
+  const nextEvent = getSerializedNextEvent();
+  const otherEvents = getSerializedOtherUpcomingEvents();
 
   return (
     <>
@@ -38,4 +37,4 @@ export default function EventsPage() {
       </div>
     </>
   );
-};
+}

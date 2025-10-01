@@ -1,10 +1,10 @@
 import React from 'react';
-import { getNextEvent } from '@/utils/eventUtils';
+import { getSerializedNextEvent } from '@/utils/eventUtils';
 import UpcomingNextEvent from './UpcomingNextEvent';
 import ComingSoon from './ComingSoonEvents';
 
 const HomePageEvents: React.FC = () => {
-  const nextEvent = getNextEvent();
+  const nextEvent = getSerializedNextEvent();
 
   // If no upcoming events, show coming soon
   if (!nextEvent) {

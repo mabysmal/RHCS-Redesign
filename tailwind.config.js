@@ -117,6 +117,7 @@ module.exports = {
           '0%': { opacity: '1', maxHeight: '500px', transform: 'translateY(0)' },
           '100%': { opacity: '0', maxHeight: '0', transform: 'translateY(-10px)' },
         },
+        
       },
       
       screens: {

@@ -1,15 +1,16 @@
 import React from 'react';
-import { getNextEvent, getOtherUpcomingEvents } from '@/utils/eventUtils';
+import { getSerializedNextEvent, getSerializedOtherUpcomingEvents } from '@/utils/eventUtils';
 import UpcomingNextEvent from './UpcomingNextEvent';
 import OtherUpcomingEvents from './OtherUpcomingEvents';
 import ComingSoon from './ComingSoonEvents';
+
 interface EventsDisplayProps {
   showOnlyNext?: boolean;
 }
 
 const EventsDisplay: React.FC<EventsDisplayProps> = ({ showOnlyNext = false }) => {
-  const nextEvent = getNextEvent();
-  const otherEvents = showOnlyNext ? [] : getOtherUpcomingEvents();
+  const nextEvent = getSerializedNextEvent();
+  const otherEvents = showOnlyNext ? [] : getSerializedOtherUpcomingEvents();
 
   // If no events at all, show coming soon
   if (!nextEvent) {

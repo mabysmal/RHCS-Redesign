@@ -3,8 +3,8 @@ import { Inter, Poppins, Open_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
 
-//Configure for Tekton Pro (Local FOnt used in logo)
-const tektonFont = localFont ({
+//Configure for Tekton Pro (Local Font used in logo)
+export const tektonFont = localFont ({
   src: './fonts/TektonPro-Bold.otf'
 })
 
@@ -28,7 +28,7 @@ const openSans = Open_Sans({
   display: 'swap',
 })
 
-//check for grammar l8r
+//todo check for grammar l8r
 
 export const metadata: Metadata = {
   title: 'RHCS - Riverview Horticultural Centre Society',

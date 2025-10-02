@@ -182,6 +182,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
                 </div>
               ))}
             </div>
+            
           </div>
 
           {/* Mobile menu button */}
@@ -196,7 +197,14 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
           </div>
         </div>
       </div>
-
+      <div className="hidden md:block fixed bottom-4 right-4">
+              <a 
+                href="/admin/index.html#/" 
+                className="bg-golden hover:bg-accent text-forest-DEFAULT px-4 py-2 rounded-lg font-display font-medium shadow-medium transition-all duration-300 hover:scale-105"
+              >
+                🌱 Admin
+              </a>
+          </div>
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-dropdown border-t border-nav-border z-40 animate-slide-down">

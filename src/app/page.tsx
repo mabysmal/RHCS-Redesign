@@ -34,11 +34,14 @@ export default function Home() {
 
       {/* Events in Home Page */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-darkgreen capitalize">
-            NEXT EVENT
+        <div className="max-w-4xl mx-auto ">
+          <h2 className="text-3xl font-black text-darkgreen capitalize animate-slide-down">
+            NEXT TREE TOUR
           </h2>
-          <HomePageEvents/>
+          <div className="animate-slide-down" >
+          <HomePageEvents />
+          </div>
+          
         </div>
       </section>
     </div>

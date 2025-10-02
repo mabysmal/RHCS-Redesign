@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${tektonFont.className} ${inter.variable} ${poppins.variable} ${openSans.variable}`}>
+    <html lang="en">
       <head>
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
       </head>

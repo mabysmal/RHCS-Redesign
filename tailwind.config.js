@@ -58,9 +58,9 @@ module.exports = {
       },
       
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Poppins', 'system-ui', 'sans-serif'],
-        'body': ['Open Sans', 'system-ui', 'sans-serif'],
+        'inter': ['Inter', 'system-ui', 'sans-serif'], // for headings and UI (buttons, menu, etc.)
+        'poppins': ['Poppins', 'system-ui', 'sans-serif'], // body text
+        'opensans': ['Open Sans', 'system-ui', 'sans-serif'], // secondary/SUpport, for microtexts, disclaimers, tips, labels in forms, etc.
       },
       
       animation: {

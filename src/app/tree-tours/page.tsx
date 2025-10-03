@@ -14,8 +14,11 @@ export default function EventsPage() {
       <div className="min-h-screen bg-cream py-16">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold text-center text-darkgreen mb-12">
-            Upcoming Tree Tours & Events
+            Tree Tours & Walks
           </h1>
+          <p className='px-4 md:px-8'>
+            The Riverview Horticultural Centre Society invite tou to a Tree Tour of a significant and beautiful part of the Lower Mainland, the historic Riverview Lands Arboretum.
+            </p>
 
           {!nextEvent ? (
             <ComingSoon />

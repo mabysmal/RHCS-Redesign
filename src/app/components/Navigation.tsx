@@ -137,7 +137,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
                     <div className="relative">
                       <button
                         onClick={() => handleDesktopDropdown(item.name)}
-                        className={`group flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
+                        className={`group flex items-center px-3 py-2 text-sm font-inter font-bold transition-colors duration-200 rounded-md ${
                           isActivePage(item.href)
                             ? 'text-nav-text-desktop-active bg-nav-bg-hover'
                             : 'text-nav-text-desktop hover:text-nav-text-desktop-hover hover:bg-nav-bg-hover'
@@ -170,7 +170,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
+                      className={`px-3 py-2 text-sm font-inter font-bold transition-colors duration-200 rounded-md ${
                         isActivePage(item.href)
                           ? 'text-nav-text-desktop-active bg-nav-bg-hover'
                           : 'text-nav-text-desktop hover:text-nav-text-desktop-hover hover:bg-nav-bg-hover'
@@ -200,7 +200,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
       <div className="hidden md:block fixed bottom-4 right-4">
               <a 
                 href="/admin/index.html#/" 
-                className="bg-golden hover:bg-accent text-forest-DEFAULT px-4 py-2 rounded-lg font-display font-medium shadow-medium transition-all duration-300 hover:scale-105"
+                className="bg-golden hover:bg-accent text-forest-DEFAULT px-4 py-2 rounded-lg font-poppins font-semibold shadow-medium transition-all duration-300 hover:scale-105"
               >
                 🌱 Admin
               </a>
@@ -208,14 +208,14 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-dropdown border-t border-nav-border z-40 animate-slide-down">
-          <div className="px-4 py-2 space-y-1 max-h-[80vh] overflow-y-auto">
+          <div className="px-4 py-2 space-y-1 max-h-[80vh] overflow-y-auto ">
             {menuData.map((item) => (
               <div key={item.name}>
                 {item.subPages ? (
                   <div>
                     <button
                       onClick={() => handleMobileExpand(item.name)}
-                      className={`w-full flex items-center justify-between px-3 py-3 text-base font-medium text-nav-text-mobile hover:text-nav-text-mobile-hover hover:bg-gray-50 rounded-md transition-colors duration-200 ${
+                      className={`w-full flex items-center justify-between px-3 py-3 text-base font-inter font-bold text-nav-text-mobile hover:text-nav-text-mobile-hover hover:bg-gray-50 rounded-md transition-colors duration-200 ${
                         isActivePage(item.href) ? 'text-nav-text-mobile-hover bg-gray-50' : ''
                       }`}
                     >
@@ -242,7 +242,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block px-3 py-3 text-base font-medium text-nav-text-mobile hover:text-nav-text-mobile-hover hover:bg-gray-50 rounded-md transition-colors duration-200 ${
+                    className={`block px-3 py-3 text-base font-inter font-bold text-nav-text-mobile hover:text-nav-text-mobile-hover hover:bg-gray-50 rounded-md transition-colors duration-200 ${
                       isActivePage(item.href) ? 'text-nav-text-mobile-hover bg-gray-50' : ''
                     }`}
                   >

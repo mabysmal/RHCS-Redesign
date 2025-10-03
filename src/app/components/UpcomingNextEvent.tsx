@@ -22,10 +22,10 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
   return (
     <>
       <div className="bg-cream rounded-lg p-4 sm:p-6 mb-4">
-        <div className="flex flex-col justify-center sm:flex-row gap-6 h-full">
+        <div className="flex flex-col justify-center border-2 border-darkgreen rounded-lg  sm:flex-row gap-2 md:gap-6 h-full ">
           {/* Date Display */}
-          <div className="flex justify-center sm:justify-start sm:self-stretch">
-            <div className="bg-darkgreen flex flex-col justify-center py-6 sm:py-0 rounded-md min-w-[5rem] sm:w-[5rem] text-center sm:h-full">
+          <div className="flex md:justify-center justify-start self-stretch ">
+            <div className="bg-darkgreen flex flex-col md:justify-center md:py-6  py-2 md: md:px-12 min-w-[5rem] w-full text-center h-full">
               <div className="text-xs font-bold text-cream uppercase tracking-wide">
                 {event.month}
               </div>
@@ -39,14 +39,14 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
           </div>
 
           {/* Event Details */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 px-2 mt-4">
             <h3 className="text-lg sm:text-xl font-semibold text-darkgreen mb-3">
               {event.title}
             </h3>
 
             <div className="space-y-2 mb-4">
               {/* Time */}
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm md:text-md font-opensans font-semibold text-olive">
                 <svg className="w-4 h-4 flex-shrink-0" fill="#283618" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
@@ -55,7 +55,7 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
 
               {/* Location */}
               {event.location && (
-                <div className="flex items-start gap-2 text-sm text-gray-600">
+                <div className="flex items-start gap-2 text-sm md:text-md font-opensans font-semibold text-olive">
                   <svg className="w-4 h-4 flex-shrink-0 mt-0.5" fill="#283618" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
@@ -66,7 +66,7 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
 
             {/* Description */}
             {event.description && (
-              <div className="text-sm text-gray-700">
+              <div className="text-sm md:text-md font-opensans font-semibold text-olive">
                 <div dangerouslySetInnerHTML={{ __html: isDescriptionTruncated ? truncatedDescription : event.description }} />
                 {isDescriptionTruncated && (
                   <button

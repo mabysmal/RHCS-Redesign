@@ -42,30 +42,7 @@ collections:
         widget: "hidden"
         default: "America/Vancouver"
       - { label: "Description", name: "description", widget: "markdown", modes: ['raw'], required: false }
-  
-  - name: "settings"
-    label: "Settings"
-    files:
-      - name: "social-media"
-        label: "Social Media"
-        file: "content/settings/social-media.json"
-        fields:
-          - name: "facebook"
-            label: "Facebook URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Facebook page"
-          - name: "instagram"
-            label: "Instagram URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Instagram account"
-          - name: "twitter"
-            label: "Twitter URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Twitter/X account"
-  
+
   - name: "news"
     label: "News & Updates"
     folder: "src/content/news"
@@ -90,3 +67,27 @@ collections:
           editor_components: [],
           modes: ["rich_text"]
         }
+  
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "social-media"
+        label: "Social Media"
+        file: "content/settings/social-media.json"
+        fields:
+          - name: "facebook"
+            label: "Facebook URL"
+            widget: "string"
+            required: false
+            hint: "Complete link to RHCS Facebook page"
+          - name: "instagram"
+            label: "Instagram URL"
+            widget: "string"
+            required: false
+            hint: "Complete link to RHCS Instagram account"
+          - name: "twitter"
+            label: "Twitter URL"
+            widget: "string"
+            required: false
+            hint: "Complete link to RHCS Twitter/X account"
+  

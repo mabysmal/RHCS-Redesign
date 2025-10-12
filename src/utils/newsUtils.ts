@@ -30,7 +30,7 @@ export interface ProcessedNewsPost extends Omit<NewsPost, 'images'> {
 // src/utils/newsUtils.ts
 
 function processPost(post: NewsPost): ProcessedNewsPost {
-    const date = new Date(post.date + 'T12:00:00Z');
+    const date = new Date(post.date);
     const year = date.getUTCFullYear().toString();
     const formattedDate = date.toLocaleDateString('en-US', {
       year: 'numeric',
@@ -90,8 +90,7 @@ export function getAllNewsPosts(): ProcessedNewsPost[] {
       if (!data.date) {
         console.error(`Post with slug "${slug}" is missing a date.`);
         return null;
-      }
-      
+      }    
 
       return {
         slug,

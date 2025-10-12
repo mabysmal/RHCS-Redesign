@@ -2,7 +2,6 @@ import { getSerializedNextEvent, getSerializedOtherUpcomingEvents } from '@/util
 import UpcomingNextEvent from '../components/UpcomingNextEvent';
 import OtherUpcomingEvents from '../components/OtherUpcomingEvents';
 import ComingSoon from '../components/ComingSoonEvents';
-import Navigation from '../components/Navigation';
 
 export default function EventsPage() {
   const nextEvent = getSerializedNextEvent();

@@ -1,5 +1,5 @@
 import Navigation from "./components/Navigation"
-import HomePageEvents from "./components/HomePageEvent";
+import HomePageEvents from "./components/HomePageEvent"; 
 import { tektonFont } from "@/lib/fonts";
 
 export default function Home() {

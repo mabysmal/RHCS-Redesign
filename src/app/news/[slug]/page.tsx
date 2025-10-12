@@ -1,9 +1,17 @@
+// src/app/news/[slug]/page.tsx
+
 import { getAllNewsPosts, getNewsPostBySlug } from '@/utils/newsUtils';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-//pages to pre-build
+// THE FIX: Define an explicit, complete Props type for the page.
+type Props = {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+// This function remains the same
 export async function generateStaticParams() {
   const posts = getAllNewsPosts();
   return posts.map((post) => ({
@@ -11,8 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function NewsPostPage({ params }: { params: { slug: string } }){
-    const post =  getNewsPostBySlug(params.slug);
+// THE FIX: Apply the new 'Props' type to the component's arguments.
+export default async function NewsPostPage({ params }: Props) {
+    const post = getNewsPostBySlug(params.slug);
   
     if (!post) {
       notFound();
@@ -40,7 +49,6 @@ export default async function NewsPostPage({ params }: { params: { slug: string 
          
           {/* Conditional Image Rendering */}
           
-          {/* Case 1: SINGLE HORIZONTAL IMAGE */}
           {hasSingleImage && !isVerticalImage && (
             <div className="relative w-full h-96 rounded-lg overflow-hidden mb-8">
               <Image src={singleImage!.src} alt={post.title} fill className="object-cover" />

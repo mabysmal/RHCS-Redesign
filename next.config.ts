@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['gray-matter'],
-  },
+  serverExternalPackages: ['gray-matter'], 
+  
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {

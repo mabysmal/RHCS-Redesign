@@ -91,6 +91,7 @@ export function getAllNewsPosts(): ProcessedNewsPost[] {
         console.error(`Post with slug "${slug}" is missing a date.`);
         return null;
       }
+      
 
       return {
         slug,
@@ -109,26 +110,26 @@ export function getAllNewsPosts(): ProcessedNewsPost[] {
 }
 
 export function getNewsPostBySlug(slug: string): ProcessedNewsPost | null {
-  const fullPath = path.join(newsDirectory, `${slug}.md`);
-  if (!fs.existsSync(fullPath)) {
-    return null;
+    const fullPath = path.join(newsDirectory, `${slug}.md`);
+    if (!fs.existsSync(fullPath)) {
+      return null;
+    }
+  
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    
+    if (!data.date) {
+      console.error(`Post with slug "${slug}" is missing a date.`);
+      return null;
+    }
+  
+    const post = {
+      slug,
+      title: data.title,
+      date: data.date,
+      images: data.images || [],
+      content,
+    } as NewsPost;
+  
+    return processPost(post);
   }
-
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  if (!data.date) {
-    console.error(`Post with slug "${slug}" is missing a date.`);
-    return null;
-  }
-
-  const post = {
-    slug,
-    title: data.title || 'Untitled Post',
-    date: data.date,
-    images: data.images || [],
-    content,
-  } as NewsPost;
-
-  return processPost(post);
-}

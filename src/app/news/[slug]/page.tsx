@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export default async function NewsPostPage({ params }: { params: { slug: string } }){
-    const post = await getNewsPostBySlug(params.slug);
+    const post =  getNewsPostBySlug(params.slug);
   
     if (!post) {
       notFound();

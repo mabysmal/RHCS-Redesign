@@ -16,14 +16,14 @@ export interface SubPage {
       href: "/",
     },
     {
-      name: "Tree Tours and Events",
-      href: "/events",
-      subPages: [
-        { name: "Schedule", href: "/events", id: "calendar" },
-        { name: "Maps and Virtual Tree Tour", href: "/events", id: "maps-tour" },
-        { name: "Interactive Tree Survey Map", href: "/events", id: "tree-map" },
-        { name: "Visit Information", href: "/events", id: "plan-visit" },
-      ],
+      name: "Tree Tours",
+      href: "/tree-tours",
+      // subPages: [
+      //   { name: "Schedule", href: "/events", id: "calendar" },
+      //   { name: "Maps and Virtual Tree Tour", href: "/events", id: "maps-tour" },
+      //   { name: "Interactive Tree Survey Map", href: "/events", id: "tree-map" },
+      //   { name: "Visit Information", href: "/events", id: "plan-visit" },
+      // ],
     },
     {
       name: "News",

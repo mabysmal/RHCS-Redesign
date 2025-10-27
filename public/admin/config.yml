@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: /events
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", default: "Tree Tour" }
       - label: "Start Date and Time"
         name: "startDateTime"
         widget: "datetime"

@@ -10,7 +10,7 @@ logo_url: /logo.png
 
 collections:
   - name: "tree-tours"
-    label: "Tree Tours"
+    label: "Tree Tours & Events"
     folder: "src/content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"

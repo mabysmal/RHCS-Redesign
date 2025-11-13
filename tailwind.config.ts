@@ -14,6 +14,7 @@ const config: Config = {
         olive: '#606C38',  
         dark: '#283618', 
         cream: '#FEFAE0',
+        darkcream: '#f0ecd5',
         terracotta: '#BC6C25',
         'forest': {
           light: '#606C38',  // Olive green

@@ -18,10 +18,11 @@ export default function RootLayout({
       <head>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
       </head>
-      <Navigation/>
+      
       <body className="font-sans bg-background text-primary antialiased">
-        {children}
-      </body>
+        <Navigation/>
+          {children}
+        </body>
     </html>
   )
 }

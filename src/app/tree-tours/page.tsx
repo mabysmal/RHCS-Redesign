@@ -30,7 +30,7 @@ export default function TreeToursPage() {
 
   return (
     <main>
-      {/* 1. Contenido inicial de la página (cabecera antes de la navegación por secciones) */}
+  
       <div className="bg-cream pt-16 pb-8">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl font-inter font-black text-darkgreen mb-4">
@@ -42,13 +42,11 @@ export default function TreeToursPage() {
         </div>
       </div>
       
-      {/* 2. Aquí insertamos el componente de navegación */}
       <SectionNav sections={treeTourSections} />
 
-      {/* 3. Ahora definimos CADA sección con su ID correspondiente */}
       <div className="">
         
-        {/* === SECCIÓN TREE TOURS === */}
+        {/* === TREE TOURS === */}
         <PageSection id="tree-tours">
           <h2 className="text-3xl font-Inter font-black text-darkgreen capitalize animate-slide-down mb-8">
             NEXT TREE TOUR
@@ -71,10 +69,9 @@ export default function TreeToursPage() {
           )}
         </PageSection>
 
-        {/* === SECCIÓN VISITOR INFORMATION === */}
+        {/* === VISITOR INFORMATION === */}
         <PageSection id="visitor-info" title="Visitor Information">
           <div className="space-y-4 text-gray-800">
-            <p>Here you can add details about what visitors should know: opening hours, what to bring, rules of the arboretum, etc.</p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, voluptatum.</p>
           </div>
         </PageSection>
@@ -82,15 +79,13 @@ export default function TreeToursPage() {
         {/* === SECCIÓN DIRECTIONS === */}
         <PageSection id="directions" title="Directions">
           <div className="space-y-4 text-gray-800">
-            <p>Provide detailed instructions on how to get to the location by car, public transit, or on foot. You could even embed a Google Map here.</p>
-            <p><strong>Address:</strong> 123 Arboretum Lane, Plant City, PC 45678</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, voluptatum.</p>
           </div>
         </PageSection>
 
         {/* === SECCIÓN MAPS === */}
         <PageSection id="maps" title="Maps">
           <div className="space-y-4 text-gray-800">
-            <p>Offer downloadable PDF maps or link to an interactive map of the grounds.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, temporibus debitis cum alias unde et.</p>
           </div>
         </PageSection>

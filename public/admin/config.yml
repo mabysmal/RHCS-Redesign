@@ -1,20 +1,96 @@
+# public/admin/config.yml
+
 backend:
   name: git-gateway
   branch: main
 
-media_folder: public/uploads
-public_folder: /uploads
+
+media_folder: "public/uploads"
+
+public_folder: "/uploads"
 
 display_url: https://rhcs.netlify.app/
 logo_url: /logo.png
 
 collections:
-  - name: "tree-tours"
-    label: "Tree Tours & Events"
+
+  - name: "tree_tours_page" 
+    label: "Page: Tree Tours"
+    label_singular: "Page Section"
+    description: "Edit the content on Tree Tours Page."
+    files:
+      
+      - name: "visitor_information"
+        label: "Visitor Information"
+        file: "src/content/tree-tours/visitor-information.md"
+        fields:
+          - name: "title"
+            label: "Page Title"
+            widget: "string"
+            default: "Visitor Information"
+          - name: "body"
+            label: "Content"
+            widget: "markdown"
+            modes: ["rich_text"]
+            buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
+            hint: "Rules, What to Bring and Info for Visitors"
+
+      - name: "directions"
+        label: "Directions"
+        file: "src/content/tree-tours/directions.md"
+        fields:
+          - name: "title"
+            label: "Page Title"
+            widget: "string"
+            default: "Directions"
+
+          - name: "directions"
+            label: "Directions Content"
+            widget: "object"
+            fields:
+              - { label: "By Car", name: "by_car", widget: "markdown", modes: ["rich_text"], buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"] }
+              - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: ["rich_text"], buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"] }
+
+
+      - name: "maps"
+        label: "Maps"
+        file: "src/content/tree-tours/maps.md"
+        fields:
+          - name: "title"
+            label: "Page Title"
+            widget: "string"
+            default: "Maps"
+          - name: "map_list"
+            label: "Maps & Links"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - name: "type"
+                label: "Type of Link"
+                widget: "select"
+                options: ["File Upload (PDF/Image)", "External Link"]
+                default: "File Upload (PDF/Image)"
+              - name: "file"
+                label: "Map File"
+                widget: "file"
+                media_library:
+                  config:
+                    multiple: false
+                    allow_uploads: true
+                condition: { field: "type", value: "File Upload (PDF/Image)" }
+              - name: "url"
+                label: "URL"
+                widget: "string"
+                condition: { field: "type", value: "External Link" }
+
+
+  - name: "events"
+    label: "Tree Tour Events"
     folder: "src/content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: /events
+    description: "Manage Events on Tree Tours Page."
     fields:
       - { label: "Title", name: "title", widget: "string", default: "Tree Tour" }
       - label: "Start Date and Time"
@@ -23,25 +99,25 @@ collections:
         date_format: "YYYY-MM-DD"
         time_format: "hh:mm A"
         format: "YYYY-MM-DD hh:mm A"
-        hint: "Time is in Coquitlam, BC"
       - label: "End Date and Time"
         name: "endDateTime"
         widget: "datetime"
         date_format: "YYYY-MM-DD"
         time_format: "hh:mm A"
         format: "YYYY-MM-DD hh:mm A"
-        hint: "The date and time the event will finish."
       - label: "Location"
         name: "location"
         widget: "string"
         default: "Henry Esson Young Building (HEY Building)"
         required: false
-        hint: "For standard Tree Tours, leave this as the default. Change it only for special events at a different location."
-      - label: "Timezone"
-        name: "timezone"
-        widget: "hidden"
-        default: "America/Vancouver"
-      - { label: "Description", name: "description", widget: "markdown", modes: ['raw'], required: false }
+      - { label: "Timezone", name: "timezone", widget: "hidden", default: "America/Vancouver" }
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+        modes: ['rich_text']
+        buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
+        required: false
+
 
   - name: "news"
     label: "News"
@@ -51,23 +127,68 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { 
-          label: "Images", 
-          name: "images", 
-          widget: "list", 
-          required: false,
-          summary: "{{fields.image}}",
-          field: { label: "Image", name: "image", widget: "image" }
-        }
-      - { 
-          label: "Body",
-          name: "body",
-          widget: "markdown",
-          buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"],
-          editor_components: [],
-          modes: ["rich_text"]
-        }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        required: false
+        summary: "{{fields.image}}"
+        field: { label: "Image", name: "image", widget: "image" }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+        buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
+
+
+  - name: "photo_gallery"
+    label: "Photo Gallery"
+    label_singular: "Album"
+    folder: "src/content/albums"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    description: "Create Photo Albums, each album can have multiple images"
+    fields:
+      - { label: "Album Title", name: "title", widget: "string" }
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+      - { label: "Description", name: "description", widget: "markdown", modes: ['rich_text'], buttons: ["bold", "italic", "link"], required: false }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        summary: "{{fields.image}}"
+        min: 1 
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
   
+
+  # placeholders for about us and get involved
+
+
+  - name: "about-us-page"
+    label: "Page: About Us"
+    description: "Edit the content on About Us Page"
+    files:
+      - { name: "mission", label: "Mission & Vision", file: "src/content/about/mission-vision.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+      - { name: "history", label: "Founding History", file: "src/content/about/history.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+
+  - name: "get-involved-page"
+    label: "Page: Get Involved"
+    description: "Edit the content on Get Involved Page"    
+    files:
+      - { name: "membership", label: "Membership", file: "src/content/get-involved/membership.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+      - { name: "donations", label: "Donations", file: "src/content/get-involved/donations.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+      
+
   - name: "settings"
     label: "Settings"
     files:
@@ -75,19 +196,6 @@ collections:
         label: "Social Media"
         file: "src/content/settings/social-media.json"
         fields:
-          - name: "facebook"
-            label: "Facebook URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Facebook page"
-          - name: "instagram"
-            label: "Instagram URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Instagram account"
-          - name: "twitter"
-            label: "Twitter URL"
-            widget: "string"
-            required: false
-            hint: "Complete link to RHCS Twitter/X account"
-  
+          - { name: "facebook", label: "Facebook URL", widget: "string", required: false }
+          - { name: "instagram", label: "Instagram URL", widget: "string", required: false }
+          - { name: "twitter", label: "Twitter URL", widget: "string", required: false }

@@ -22,7 +22,4 @@ directions:
     3. Then walk up **Oak Crescent**
 
     4. Turn right on **Kalmia Place**, Henry Esson Young Building building (H.E.Y.) is on your right.
-
-
-    From Lougheed
 ---

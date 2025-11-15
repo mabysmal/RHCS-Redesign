@@ -70,21 +70,21 @@ export default function TreeToursPage() {
         </PageSection>
 
         {/* === VISITOR INFORMATION === */}
-        <PageSection id="visitor-info" title="Visitor Information">
+        <PageSection id="visitor-info" title="VISITOR INFORMATION">
           <div className="space-y-4 text-gray-800">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, voluptatum.</p>
           </div>
         </PageSection>
 
-        {/* === SECCIÓN DIRECTIONS === */}
-        <PageSection id="directions" title="Directions">
+        {/* === DIRECTIONS === */}
+        <PageSection id="directions" title="DIRECTIONS">
           <div className="space-y-4 text-gray-800">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, voluptatum.</p>
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, voluptatum.</h2>
           </div>
         </PageSection>
 
-        {/* === SECCIÓN MAPS === */}
-        <PageSection id="maps" title="Maps">
+        {/* === b MAPS === */}
+        <PageSection id="maps" title="MAPS">
           <div className="space-y-4 text-gray-800">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, temporibus debitis cum alias unde et.</p>
           </div>

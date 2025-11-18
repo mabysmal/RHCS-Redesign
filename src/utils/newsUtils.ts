@@ -27,7 +27,6 @@ export interface ProcessedNewsPost extends Omit<NewsPost, 'images'> {
   }[];
 }
 
-// src/utils/newsUtils.ts
 
 function processPost(post: NewsPost): ProcessedNewsPost {
     const date = new Date(post.date);

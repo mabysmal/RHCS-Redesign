@@ -12,7 +12,7 @@ export function getVisitorInfo() {
 
     return {
         title: data.title as string,
-        htmlContent: marked.parse(content) as string,
+        htmlContent: marked.parse(content) as string, 
     }
 }
 

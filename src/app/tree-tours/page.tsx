@@ -35,18 +35,19 @@ export default function TreeToursPage() {
   
 
   return (
-    <main>
+    <main className='max-w-4xl mx-auto'>
   
-      <div className="bg-cream pt-16 pb-8">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl font-inter font-black text-darkgreen mb-4">
-            Tree Tours & Walks
-          </h1>
-          <p className='max-w-3xl mx-auto text-sm md:text-lg font-poppins font-medium text-gray-700'>
+      <div className="bg-cream pt-16 px-6 pb-8">
+        <div className='mb-8 border-b-2 border-olive pb-4'>
+            <h1 className="text-3xl font-Inter font-black text-darkgreen capitalize animate-slide-down pb-2">
+              Tree Tours
+            </h1>
+            <p className='text-sm md:text-lg font-poppins font-medium text-gray-700 animate-slide-down'>
             The Riverview Horticultural Centre Society invite you to a Tree Tour of a significant and beautiful part of the Lower Mainland, the historic Riverview Lands Arboretum.
-          </p>
-        </div>
+            </p>
+          </div>
       </div>
+      
       
       <SectionNav sections={treeTourSections} />
 

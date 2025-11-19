@@ -42,11 +42,10 @@ export default async function NewsPostPage(props: {params: Params}) {
             {post.title}
           </h1>
           <span className="block text-olive font-opensans mb-8">{post.formattedDate}</span>
-         
-          {/* Conditional Image Rendering */}
+
           
           {hasMultipleImages ? (
-            // --- LAYOUT A: multiple images (Carrusel + Texto) ---
+            // LAYOUT A: multiple images
             <div className="lg:grid lg:grid-cols-3 lg:gap-12">
               {/* left col: Carrusel */}
               <div className="mb-8 lg:mb-0 lg:col-span-1">
@@ -61,7 +60,7 @@ export default async function NewsPostPage(props: {params: Params}) {
               </div>
             </div>
           ) : (
-            // --- LAYOUT B: 1 or NO image ---
+            // LAYOUT B: 1 or NO image
             <>
               {/* single image horizontal */}
               {hasSingleImage && !isVerticalImage && (

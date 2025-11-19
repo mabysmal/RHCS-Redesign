@@ -26,13 +26,13 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
           {/* Date Display */}
           <div className="flex md:justify-center justify-start self-stretch ">
             <div className="bg-darkgreen flex flex-col md:justify-center md:py-6  py-2 md: md:px-12 min-w-[5rem] w-full text-center h-full">
-              <div className="text-xs font-poppins font-bold text-cream uppercase tracking-wide">
+              <div className="text-sm font-poppins font-bold text-cream uppercase tracking-wide">
                 {event.month}
               </div>
               <div className="text-3xl my-2 font-poppins font-bold text-cream">
                 {event.dayOfMonth}
               </div>
-              <div className="text-xs font-poppins font-bold text-cream capitalize">
+              <div className="text-sm font-poppins font-bold text-cream capitalize">
                 {event.dayOfWeek}
               </div>
             </div>
@@ -40,7 +40,7 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
 
           {/* Event Details */}
           <div className="flex-1 min-w-0 px-2 mt-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-darkgreen mb-3">
+            <h3 className="text-lg md:text-xl font-semibold text-darkgreen mb-3">
               {event.title}
             </h3>
 
@@ -71,7 +71,7 @@ const UpcomingNextEvent: React.FC<UpcomingNextEventProps> = ({ event }) => {
                 {isDescriptionTruncated && (
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="text-terracotta hover:text-darkgreen font-medium mt-1 transition-colors duration-200 underline"
+                    className="text-terracotta hover:text-darkgreen font-medium mt-1 transition-colors duration-200 underline mb-4"
                   >
                     Read more
                   </button>

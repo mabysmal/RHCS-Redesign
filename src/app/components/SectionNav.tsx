@@ -47,7 +47,7 @@ const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
   }, [sections]);
 
 
-  const baseClasses = "px-4 py-2 rounded-full text-sm sm:text-base font-inter font-medium transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500";
+  const baseClasses = "px-4 py-2 rounded-full text-sm font-inter font-medium transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500";
   const inactiveClasses = "bg-darkcream text-gray-600 hover:bg-terracotta-300";
   const activeClasses = "bg-darkgreen text-white shadow-md";
 

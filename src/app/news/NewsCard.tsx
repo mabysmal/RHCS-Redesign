@@ -8,7 +8,7 @@ interface NewsCardProps {
 
 export default function NewsCard({ post }: NewsCardProps) {
   return (
-    <Link href={`/news/${post.slug}`} className="group flex flex-col bg-white rounded-xl shadow-soft hover:shadow-medium transition-shadow duration-300 overflow-hidden">
+    <Link href={`/news/${post.slug}`} className="group flex flex-col bg-white rounded-xl shadow-soft hover:shadow-strong transition-shadow duration-300 overflow-hidden">
       {post.images && post.images.length > 0 && (
         <div className="relative w-full h-48 overflow-hidden">
           <Image
@@ -29,7 +29,7 @@ export default function NewsCard({ post }: NewsCardProps) {
         <p className="text-base text-gray-700 font-poppins flex-grow mb-4 line-clamp-4">
             {post.excerpt}
         </p>
-        <div className="mt-auto text-logo-green font-semibold group-hover:underline">
+        <div className="mt-auto text-terracotta hover:text-darkgreen font-medium transition-colors duration-200 underline mb-4 group-hover:underline">
           Read More &rarr;
         </div>
       </div>

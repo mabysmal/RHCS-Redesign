@@ -9,7 +9,7 @@ export default function NewsPage() {
     .sort((a, b) => b.localeCompare(a));
 
   return (
-    <main className="bg-background text-primary py-12 px-4 sm:px-6 lg:px-8">
+    <main className="bg-background text-primary max-w-4xl pt-8 p-6 mx-auto">
       <div className="mx-auto">
 
         {/*Hero */}
@@ -26,7 +26,7 @@ export default function NewsPage() {
           </div>
 
           {/* right */}
-          <div className="w-full md:w-1/3 aspect-square relative rounded-2xl overflow-hidden">
+          <div className="w-3/4 md:w-1/3 aspect-square relative rounded-2xl overflow-hidden">
             <Image
               src="/news.jpg" 
               alt="Riverview Horticultural Centre Society News"

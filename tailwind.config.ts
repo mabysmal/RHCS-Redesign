@@ -16,6 +16,7 @@ const config: Config = {
         cream: '#FEFAE0',
         darkcream: '#f0ecd5',
         terracotta: '#BC6C25',
+        terracottalight: '#e8964d',
         'forest': {
           light: '#606C38',  // Olive green
           dark: '#283618', 

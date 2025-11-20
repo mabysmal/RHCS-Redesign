@@ -44,16 +44,16 @@ const OtherUpcomingEvents: React.FC<OtherUpcomingEventsProps> = ({ events }) => 
           return (
             <div
               key={event.slug}
-              className="border-darkgreen border-2 rounded-lg hover:shadow-md transition-shadow"
+              className=" bg-white rounded-xl shadow-soft hover:shadow-strong transition-shadow duration-300"
             >
 
               <div className="flex flex-row justify-center gap-6 h-full">
                 {/* Date Display */}
                 <div className="flex justify-center sm:justify-start sm:self-stretch">
-                  <div className="bg-darkgreen flex flex-col justify-center min-w-[5rem] sm:w-[5rem] text-center sm:h-full">
-                    <div className="text-xs font-poppins font-bold text-cream uppercase tracking-wide">{event.month}</div>
-                    <div className="text-2xl my-2 font-poppins font-bold text-cream">{event.dayOfMonth}</div>
-                    <div className="text-xs font-poppins font-bold text-cream capitalize">{event.dayOfWeek}</div>
+                  <div className="bg-darkgreen rounded-l-xl flex flex-col justify-center min-w-[5rem] sm:w-[5rem] text-center sm:h-full">
+                    <div className="text-xs font-poppins font-bold text-white uppercase tracking-wide">{event.month}</div>
+                    <div className="text-2xl my-2 font-poppins font-bold text-white">{event.dayOfMonth}</div>
+                    <div className="text-xs font-poppins font-bold text-white capitalize">{event.dayOfWeek}</div>
                   </div>
                 </div>
 
@@ -72,10 +72,10 @@ const OtherUpcomingEvents: React.FC<OtherUpcomingEventsProps> = ({ events }) => 
                     </div>
                   </div>
                   {event.description && (
-                    <div className="text-sm md:text-md font-opensans font-semibold text-olive">
+                    <div className="text-sm md:text-md font-opensans font-semibold text-gray-700">
                       <div dangerouslySetInnerHTML={{ __html: isDescriptionTruncated ? truncatedDescription : event.description }} />
                       {isDescriptionTruncated && (
-                        <button onClick={() => handleReadMore(event)} className="text-terracotta hover:text-darkgreen font-medium mt-1 transition-colors duration-200 underline">Read more</button>
+                        <button onClick={() => handleReadMore(event)} className="text-terracotta hover:text-darkgreen font-medium mt-1 transition-colors duration-200 underline">Read More &rarr;</button>
                       )}
                     </div>
                   )}

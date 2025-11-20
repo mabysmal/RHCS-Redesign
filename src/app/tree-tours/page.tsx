@@ -7,6 +7,7 @@ import OtherUpcomingEvents from '../components/OtherUpcomingEvents';
 import ComingSoon from '../components/ComingSoonEvents';
 import CarIcon from '../components/icons/Car';
 import BusIcon from '../components/icons/Bus';
+import GoogleMap from '../components/GoogleMap';
 
 interface DirectionMethodProps {
   icon: React.ReactNode;
@@ -30,6 +31,8 @@ const DirectionMethod: React.FC<DirectionMethodProps> = ({ icon, title, htmlCont
     </div>
   </div>
 );
+
+
 
 
 export default function TreeToursPage() {
@@ -58,6 +61,8 @@ export default function TreeToursPage() {
       </div>
     </section>
   );
+
+  const henryEssonYoungMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9170.355807425884!2d-122.8138034394643!3d49.25024190817116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486789fc8a559f7%3A0xe4c6251d9aad915c!2sHenry%20Esson%20Young%20Building!5e0!3m2!1sen!2sca!4v1763627033587!5m2!1sen!2sca";
 
   return (
     <main className='max-w-4xl mx-auto'>
@@ -125,13 +130,28 @@ export default function TreeToursPage() {
         {/* === MAPS === */}
         <PageSection id="maps" title='MAPS'>
           <div className="prose max-w-none">
-            <p>Here are some helpful maps for your visit:</p>
-            <ul className="!pl-0 list-none"> 
+            <p className='mb-4'>Here are some helpful maps for your visit:</p>
+            
+            <div className="mb-8"> 
+              <h3 className="text-xl font-Inter font-semibold text-darkgreen mb-4">
+                Location: Henry Esson Young Building
+              </h3>
+              
+              <GoogleMap
+                src={henryEssonYoungMapUrl}
+                width="100%" 
+                height="40vw"
+                title="Google Map of Henry Esson Young Building"
+              />
+            </div>
+
+
+            <ul className="!pl-0 list-none">
               {maps.map_list.map((map, index) => (
-                <li key={index} className="mb-3"> 
+                <li key={index} className="mb-3">
                   <a
                     href={map.type === 'External Link' ? map.url : map.file}
-                    target="_blank" // Siempre abrir en una nueva pestaña (mapas o links externos)
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-terracotta hover:text-terracottalight hover:underline"
                   >

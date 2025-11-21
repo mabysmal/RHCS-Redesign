@@ -133,7 +133,7 @@ export default function TreeToursPage() {
                 Virtual Tree Tour Video
             </h2>
             <p className='text-sm md:text-md font-opensans font-semibold text-gray-700 mb-4'>
-              Explore the beauty and history of the Riverview Arboretum from home with this relaxing Virtual Tree Tour by Camera Jamie. Wander through lush park-like grounds, discover unique and heritage trees, and learn interesting bits of trivia about Riverview Lands' tree collections.
+              Explore the beauty and history of the Riverview Arboretum from home with this relaxing Virtual Tree Tour by Camera Jamie. Wander through lush park-like grounds, discover unique and heritage trees, and learn interesting bits of trivia about Riverview Lands&apos; tree collections.
             </p>
 
             <div className="relative rounded-lg overflow-hidden shadow-medium" style={{ paddingBottom: '56.25%', height: 0 }}> {/* Aspect Ratio 16:9*/}

@@ -65,7 +65,7 @@ export default function TreeToursPage() {
   const henryEssonYoungMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9170.355807425884!2d-122.8138034394643!3d49.25024190817116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486789fc8a559f7%3A0xe4c6251d9aad915c!2sHenry%20Esson%20Young%20Building!5e0!3m2!1sen!2sca!4v1763627033587!5m2!1sen!2sca";
 
   return (
-    <main className='max-w-4xl mx-auto'>
+    <div className='max-w-4xl mx-auto'>
       <div className="bg-cream pt-16 px-6 pb-8">
         <div className='mb-8 border-b-2 border-olive pb-4'>
             <h1 className="text-3xl font-Inter font-black text-darkgreen capitalize animate-slide-down pb-2">
@@ -74,6 +74,7 @@ export default function TreeToursPage() {
             <p className='text-sm md:text-lg font-poppins font-medium text-gray-700 animate-slide-down'>
             The Riverview Horticultural Centre Society invite you to a Tree Tour of a significant and beautiful part of the Lower Mainland, the historic Riverview Lands Arboretum.
             </p>
+            <span> test 1</span>
           </div>
       </div>
       
@@ -170,6 +171,6 @@ export default function TreeToursPage() {
           </div>
         </PageSection>
       </div>
-    </main>
+    </div>
   );
 }

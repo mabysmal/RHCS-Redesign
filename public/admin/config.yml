@@ -2,119 +2,88 @@ backend:
   name: git-gateway
   branch: main
 
-
 media_folder: "public/uploads"
-
 public_folder: "/uploads"
 
 display_url: https://rhcs.netlify.app/
 logo_url: /logo.png
 
 collections:
-
   - name: "tree_tours_page"
-  label: "Page: Tree Tours"
-  label_singular: "Page Section"
-  description: "Edit the content on Tree Tours Page."
-  files:
-    - name: "visitor_information"
-      label: "Visitor Information"
-      file: "src/content/tree-tours/visitor-information.md"
-      fields:
-        - name: "title"
-          label: "Page Title"
-          widget: "string"
-          default: "Visitor Information"
-        - name: "body"
-          label: "Content"
-          widget: "markdown"
-          modes: ["rich_text"]
-          buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
-          hint: "Rules, What to Bring and Info for Visitors"
+    label: "Page: Tree Tours"
+    label_singular: "Page Section"
+    description: "Edit the content on Tree Tours Page."
+    files:
+      - name: "visitor_information"
+        label: "Visitor Information"
+        file: "src/content/tree-tours/visitor-information.md"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string", default: "Visitor Information" }
+          - name: "body"
+            label: "Content"
+            widget: "markdown"
+            modes: [rich_text]
+            buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+            hint: "Rules, What to Bring and Info for Visitors"
 
-    - name: "directions"
-      label: "Directions"
-      file: "src/content/tree-tours/directions.md"
-      fields:
-        - name: "title"
-          label: "Page Title"
-          widget: "string"
-          default: "Directions"
-        - name: "directions"
-          label: "Directions Content"
-          widget: "object"
-          fields:
-            - { label: "By Car", name: "by_car", widget: "markdown", modes: ["rich_text"], buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"] }
-            - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: ["rich_text"], buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"] }
+      - name: "directions"
+        label: "Directions"
+        file: "src/content/tree-tours/directions.md"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string", default: "Directions" }
+          - name: "directions"
+            label: "Directions Content"
+            widget: "object"
+            fields:
+              - { label: "By Car", name: "by_car", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
+              - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
 
-    - name: "maps"
-      label: "Maps"
-      file: "src/content/tree-tours/maps.md"
-      fields:
-        - name: "title"
-          label: "Page Title"
-          widget: "string"
-          default: "Maps"
-        - name: "map_list"
-          label: "Maps & Links"
-          widget: "list"
-          summary: "{{fields.title}}"
-          fields:
-            - { label: "Title", name: "title", widget: "string" }
-            - name: "type"
-              label: "Type of Link"
-              widget: "select"
-              options: ["File Upload (PDF/Image)", "External Link"]
-              default: "File Upload (PDF/Image)"
-            - name: "file"
-              label: "Map File"
-              widget: "file"
-              media_library:
-                config:
-                  multiple: false
-                  allow_uploads: true
-              
-            - name: "url"
-              label: "External URL"
-              widget: "string"
-              required: false
-              condition: { field: "type", value: "External Link" }
-              
-
+      - name: "maps"
+        label: "Maps"
+        file: "src/content/tree-tours/maps.md"
+        fields:
+          - { name: "title", label: "Page Title", widget: "string", default: "Maps" }
+          - name: "map_list"
+            label: "Maps & Links"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - name: "type"
+                label: "Type of Link"
+                widget: "select"
+                options: ["File Upload (PDF/Image)", "External Link"]
+              - name: "file"
+                label: "Map File"
+                widget: "file"
+                required: false
+              - name: "url"
+                label: "External URL"
+                widget: "string"
+                required: false
 
   - name: "events"
     label: "Tree Tour Events"
     folder: "src/content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    description: "Manage Events on Tree Tours Page."
     fields:
       - { label: "Title", name: "title", widget: "string", default: "Tree Tour" }
-      - label: "Start Date and Time"
-        name: "startDateTime"
+      - name: "startDateTime"
+        label: "Start Date and Time"
         widget: "datetime"
         date_format: "YYYY-MM-DD"
         time_format: "hh:mm A"
         format: "YYYY-MM-DD hh:mm A"
-      - label: "End Date and Time"
-        name: "endDateTime"
+      - name: "endDateTime"
+        label: "End Date and Time"
         widget: "datetime"
         date_format: "YYYY-MM-DD"
         time_format: "hh:mm A"
         format: "YYYY-MM-DD hh:mm A"
-      - label: "Location"
-        name: "location"
-        widget: "string"
-        default: "Henry Esson Young Building (HEY Building)"
-        required: false
-      - { label: "Timezone", name: "timezone", widget: "hidden", default: "America/Vancouver" }
-      - label: "Description"
-        name: "description"
-        widget: "markdown"
-        modes: ['rich_text']
-        buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
-        required: false
-
+      - { name: "location", label: "Location", widget: "string", required: false }
+      - { name: "timezone", label: "Timezone", widget: "hidden", default: "America/Vancouver" }
+      - { name: "description", label: "Description", widget: "markdown", required: false }
 
   - name: "news"
     label: "News"
@@ -122,69 +91,46 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - label: "Images"
-        name: "images"
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Publish Date", widget: "datetime", format: "YYYY-MM-DD" }
+      - name: "images"
+        label: "Images"
         widget: "list"
         required: false
-        summary: "{{fields.image}}"
-        field: { label: "Image", name: "image", widget: "image" }
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-        modes: ["rich_text"]
-        buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
-
+        field:
+          { name: "image", label: "Image", widget: "image" }
+      - { name: "body", label: "Body", widget: "markdown" }
 
   - name: "photo_gallery"
     label: "Photo Gallery"
-    label_singular: "Album"
     folder: "src/content/albums"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    description: "Create Photo Albums, each album can have multiple images"
     fields:
-      - { label: "Album Title", name: "title", widget: "string" }
-      - label: "Date"
-        name: "date"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        date_format: "YYYY-MM-DD"
-        time_format: false
-        default: ""
-      - { label: "Description", name: "description", widget: "markdown", modes: ['rich_text'], buttons: ["bold", "italic", "link"], required: false }
-      - label: "Photos"
-        name: "photos"
+      - { name: "title", label: "Album Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { name: "description", label: "Description", widget: "markdown", required: false }
+      - name: "photos"
+        label: "Photos"
         widget: "list"
         summary: "{{fields.image}}"
-        min: 1 
+        min: 1
         field:
-          label: "Image"
-          name: "image"
-          widget: "image"
-          media_library:
-            config:
-              multiple: false
-  
+          { name: "image", label: "Image", widget: "image" }
 
-  # placeholders for about us and get involved
-
+          #TODO: PLAN ABOUT US PAGE AND GET INVOLVED PAGE
 
   - name: "about-us-page"
     label: "Page: About Us"
-    description: "Edit the content on About Us Page"
     files:
       - { name: "mission", label: "Mission & Vision", file: "src/content/about/mission-vision.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
       - { name: "history", label: "Founding History", file: "src/content/about/history.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
 
   - name: "get-involved-page"
     label: "Page: Get Involved"
-    description: "Edit the content on Get Involved Page"    
     files:
       - { name: "membership", label: "Membership", file: "src/content/get-involved/membership.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
       - { name: "donations", label: "Donations", file: "src/content/get-involved/donations.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
-      
 
   - name: "settings"
     label: "Settings"

@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@next/font": "^14.2.15",
     "@tailwindcss/forms": "^0.5.10",
     "embla-carousel-autoplay": "^8.6.0",

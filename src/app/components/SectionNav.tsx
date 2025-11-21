@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 
-// component props: label of section, id to scroll to 
+// component props: label of section, id to scroll to
 interface SectionItem {
-  label: string;    
-  targetId: string; 
+  label: string;
+  targetId: string;
 }
 
 interface SectionNavProps {
@@ -18,34 +18,33 @@ const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
   useEffect(() => {
     const handleScroll = () => {
       let currentSectionId = '';
+      const offset = 100;
       
-      sections.forEach(section => {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         const element = document.getElementById(section.targetId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // active section = if its on the top half of the screen
-          if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+          if (rect.top <= offset && rect.bottom > offset) {
             currentSectionId = section.targetId;
+            break;
           }
         }
-      });
-      if (window.scrollY === 0 && sections.length > 0) {
-        currentSectionId = sections[0].targetId;
       }
 
+      if (!currentSectionId && sections.length > 0) {
+        currentSectionId = sections[0].targetId;
+      }
+      
       setActiveSection(currentSectionId);
     };
 
-
     window.addEventListener('scroll', handleScroll);
-
     handleScroll();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [sections]);
-
 
   const baseClasses = "px-4 py-2 rounded-full text-sm font-inter font-medium transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500";
   const inactiveClasses = "bg-darkcream text-gray-600 hover:bg-terracotta-300";

@@ -5,6 +5,7 @@ interface GoogleMapProps {
   width?: string;
   height?: string;
   title?: string;
+  className?: string;
 }
 
 const GoogleMap: React.FC<GoogleMapProps> = ({
@@ -12,6 +13,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
   width = '600',
   height = '450',
   title = 'Google Map Location',
+  className = '',
 }) => {
   return (
     <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: `${(parseInt(height) / parseInt(width)) * 100}%` }}>
@@ -24,6 +26,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title={title}
+        className={className}
       ></iframe>
     </div>
   );

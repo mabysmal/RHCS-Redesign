@@ -52,7 +52,7 @@ const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
 
   return (
     // nav component container
-    <nav className="w-full py-4 mb-8 sticky top-0 bg-cream bg-opacity-80 backdrop-blur-sm z-40">
+    <nav className="w-full py-4 md:pt-12 mb-8 sticky top-0 bg-cream bg-opacity-80 backdrop-blur-sm z-40">
       <div className="container mx-auto flex justify-center items-center gap-2 md:gap-4 flex-wrap px-4">
         {/* mapping all sections to make a link */}
         {sections.map((section) => (

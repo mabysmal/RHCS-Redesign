@@ -9,6 +9,8 @@ import CarIcon from '../components/icons/Car';
 import BusIcon from '../components/icons/Bus';
 import GoogleMap from '../components/GoogleMap';
 import { DocumentTextIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import HeroSection from '../components/HeroSection';
+import { getHeroSectionData } from '@/utils/heroUtils';
 
 interface DirectionMethodProps {
   icon: React.ReactNode;
@@ -59,7 +61,8 @@ const MapLink: React.FC<{ map: MapItem }> = ({ map }) => {
   );
 };
 
-export default function TreeToursPage() {
+export default async function TreeToursPage() {
+  const heroData = await getHeroSectionData('src/content/tree-tours/hero.md');
   const nextEvent = getSerializedNextEvent();
   const otherEvents = getSerializedOtherUpcomingEvents();
   const visitorInfo = getVisitorInfo();
@@ -93,20 +96,18 @@ export default function TreeToursPage() {
   const youtubeVideoWatchUrl = "https://www.youtube.com/watch?v=NfeEnBo0CwQ";
 
   return (
-    <main className='max-w-4xl mx-auto'>
-      <div className="bg-cream pt-16 px-6 pb-8">
-        <div className='mb-8 border-b-2 border-olive pb-4'>
-          <h1 className="text-3xl md:text-4xl font-inter font-black text-darkgreen capitalize animate-slide-down pb-2 text-center">
-            Tree Tours
-          </h1>
-          <p className='text-sm md:text-lg font-poppins font-medium text-gray-700 animate-slide-down text-center max-w-2xl mx-auto'>
-            The Riverview Horticultural Centre Society invite you to a Tree Tour of a significant and beautiful part of the Lower Mainland, the historic Riverview Lands Arboretum.
-          </p>
-        </div>
-      </div>
+    <main className=''>
+      <HeroSection 
+        data={heroData}
+        heightClass="h-[50vh] min-h-[400px]"
+        textClasses={{
+          title: "text-4xl md:text-6xl font-bold mb-8", 
+          description: "text-lg md:text-xl font-poppins font-medium mb-12" 
+        }}
+      />
       <SectionNav sections={treeTourSections} />
 
-      <div className="bg-cream">
+      <div className="bg-cream max-w-4xl mx-auto">
         {/* === TREE TOURS === */}
         <PageSection id="tree-tours">
           <h2 className="text-3xl font-inter font-black text-darkgreen capitalize animate-slide-down mb-8 text-center">

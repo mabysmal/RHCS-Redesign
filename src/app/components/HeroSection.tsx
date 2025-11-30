@@ -30,28 +30,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   const { title, description, backgroundImage, primaryButton, secondaryButton } = data;
 
-  // Image overlay and filter styles
+  // overlay and filter styles
   const imageOverlayClasses = twMerge(
     'absolute inset-0 z-0 rounded-lg',
-    backgroundImage ? 'bg-darkgreen/[.5]' : '', // Apply tint with specified opacity only if there's an image
+    backgroundImage ? 'bg-darkgreen/[.5]' : '', // tint with specified opacity only if theres an image
     'brightness-90' // Apply brightness filter
   );
 
   const imageFilterClasses = twMerge(
-    backgroundImage ? 'blur-20' : '' // Apply blur filter
+    backgroundImage ? 'blur-20' : ''
   );
 
   const containerClasses = twMerge(
     'relative w-full flex items-center justify-center text-center p-8 overflow-hidden',
     'bg-forest-light', 
-    heightClass // Apply height class
+    heightClass
   );
 
   const contentWrapperClasses = 'relative z-10 flex flex-col items-center justify-center max-w-4xl mx-auto w-full';
-
-  // Customizable text classes using props or defaults
   const defaultTitleClasses = `text-5xl font-bold mb-4 text-cream shadow-inner-soft ${tektonFont.className}`;
-  const defaultDescriptionClasses = `text-xl mb-8 font-opensans text-cream max-w-2xl mx-auto shadow-inner-soft ${description?.length > 100 ? 'lg:max-w-3xl' : ''}`; // Adjust max-width for longer descriptions if needed
+  const defaultDescriptionClasses = `text-xl mb-8 font-opensans text-cream max-w-2xl mx-auto shadow-inner-soft ${description?.length > 100 ? 'lg:max-w-3xl' : ''}`;
 
   const titleClasses = twMerge(defaultTitleClasses, textClasses?.title);
   const descriptionClasses = twMerge(defaultDescriptionClasses, textClasses?.description);
@@ -64,10 +62,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <Image
             src={backgroundImage}
             alt="Hero Background Image"
-            fill // Next.js 15 uses 'fill' instead of layout="fill"
-            style={{ objectFit: 'cover' }} // Use style prop for objectFit
-            quality={75} // Adjust image quality as needed
-            className="z-0 rounded-lg" // Ensure image is behind content and has rounded corners
+            fill
+            style={{ objectFit: 'cover' }}
+            quality={75}
+            className="z-0 rounded-lg"
           />
           {/* Tint Overlay */}
           <div className={imageOverlayClasses}></div>
@@ -77,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Content Wrapper */}
       <div className={contentWrapperClasses}>
         <h1 className={titleClasses}>{title}</h1>
-        {description && ( // Only render paragraph if description exists
+        {description && ( //ONLY render paragraph IF description exists
           <p className={descriptionClasses}>{description}</p>
         )}
 

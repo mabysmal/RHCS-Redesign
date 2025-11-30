@@ -5,9 +5,11 @@ backend:
   public_folder: "/uploads"
   display_url: https://rhcs.netlify.app/
   logo_url: /logo.png
+
+# --- Media Library Configuration ---
 media_library:
   name: assets
-  folder_depth: 1 
+  folder_depth: 1
 
 collections:
   # --- TREE TOURS PAGE ---

@@ -5,9 +5,10 @@ backend:
   public_folder: "/uploads"
   display_url: https://rhcs.netlify.app/
   logo_url: /logo.png
-  media_library:
-    name: assets
-    folder_depth: 1
+media_library:
+  name: assets
+  folder_depth: 1 
+
 collections:
   # --- TREE TOURS PAGE ---
   - name: "tree_tours_page"
@@ -39,7 +40,7 @@ collections:
         file: "src/content/tree-tours/directions.md"
         fields:
           - { name: "title", label: "Page Title", widget: "string", default: "Directions" }
-          - name: "directions_content" # Renamed to avoid conflict with 'directions' widget
+          - name: "directions_content"
             label: "Directions Content"
             widget: "object"
             fields:
@@ -95,7 +96,7 @@ collections:
   # --- NEWS COLLECTION ---
   - name: "news_listing_hero"
     label: "News Listing Hero"
-    file: "src/content/news/hero.md"
+    file: "src/content/news/hero.md" 
     fields:
       - { name: "title", label: "Hero Title", widget: "string" }
       - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
@@ -109,6 +110,7 @@ collections:
           { label: "URL", name: "url", widget: "string" }
         ]}
 
+  # NEWS ITEMS (posts)
   - name: "news"
     label: "News Items"
     folder: "src/content/news"
@@ -126,6 +128,7 @@ collections:
       - { name: "body", label: "Body", widget: "markdown" }
 
   # --- PHOTO GALLERY COLLECTION ---
+
   - name: "photo_gallery_listing_hero"
     label: "Photo Gallery Listing Hero"
     file: "src/content/photo-gallery/hero.md"
@@ -142,6 +145,7 @@ collections:
           { label: "URL", name: "url", widget: "string" }
         ]}
 
+  # PHOTO GALLERY ALBUMS
   - name: "photo_gallery"
     label: "Photo Gallery Albums"
     folder: "src/content/albums"

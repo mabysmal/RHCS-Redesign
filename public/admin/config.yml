@@ -1,31 +1,37 @@
 backend:
   name: git-gateway
   branch: main
-
-media_folder: "public/uploads"
-public_folder: "/uploads"
-
-display_url: https://rhcs.netlify.app/
-logo_url: /logo.png
+  media_folder: "public/uploads"
+  public_folder: "/uploads"
+  display_url: https://rhcs.netlify.app/
+  logo_url: /logo.png
 
 collections:
+  # --- Tree Tours Page ---
   - name: "tree_tours_page"
     label: "Page: Tree Tours"
-    label_singular: "Page Section"
-    description: "Edit the content on Tree Tours Page."
     files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/tree-tours/hero.md" 
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
       - name: "visitor_information"
         label: "Visitor Information"
         file: "src/content/tree-tours/visitor-information.md"
         fields:
           - { name: "title", label: "Page Title", widget: "string", default: "Visitor Information" }
-          - name: "body"
-            label: "Content"
-            widget: "markdown"
-            modes: [rich_text]
-            buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
-            hint: "Rules, What to Bring and Info for Visitors"
-
+          - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list], hint: "Rules, What to Bring and Info for Visitors" }
       - name: "directions"
         label: "Directions"
         file: "src/content/tree-tours/directions.md"
@@ -37,7 +43,6 @@ collections:
             fields:
               - { label: "By Car", name: "by_car", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
               - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
-
       - name: "maps"
         label: "Maps"
         file: "src/content/tree-tours/maps.md"
@@ -62,13 +67,13 @@ collections:
                 widget: "string"
                 required: false
 
+  # --- Events Collection ---
   - name: "events"
-    label: "Tree Tour Events"
+    label: "Events"
     folder: "src/content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", default: "Tree Tour" }
       - name: "startDateTime"
         label: "Start Date and Time"
         widget: "datetime"
@@ -85,13 +90,30 @@ collections:
       - { name: "timezone", label: "Timezone", widget: "hidden", default: "America/Vancouver" }
       - { name: "description", label: "Description", widget: "markdown", required: false }
 
+  # --- News Collection ---
   - name: "news"
     label: "News"
-    folder: "src/content/news"
+    files:
+      - name: "hero"
+        label: "News Listing Page Hero Section"
+        file: "src/content/news/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+    folder: "src/content/news" 
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
+    fields: # Fields for the individual news items (NO HERO HERE)
+      - { name: "title", label: "Post Title", widget: "string" }
       - { name: "date", label: "Publish Date", widget: "datetime", format: "YYYY-MM-DD" }
       - name: "images"
         label: "Images"
@@ -101,9 +123,26 @@ collections:
           { name: "image", label: "Image", widget: "image" }
       - { name: "body", label: "Body", widget: "markdown" }
 
+  # --- Photo Gallery Collection ---
   - name: "photo_gallery"
     label: "Photo Gallery"
-    folder: "src/content/albums"
+    files:
+      - name: "hero"
+        label: "Photo Gallery Listing Page Hero Section"
+        file: "src/content/photo-gallery/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+    folder: "src/content/albums" # This' folder of photo albums
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -118,20 +157,63 @@ collections:
         field:
           { name: "image", label: "Image", widget: "image" }
 
-          #TODO: PLAN ABOUT US PAGE AND GET INVOLVED PAGE
-
+  # --- About Us Page ---
   - name: "about-us-page"
     label: "Page: About Us"
     files:
-      - { name: "mission", label: "Mission & Vision", file: "src/content/about/mission-vision.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
-      - { name: "history", label: "Founding History", file: "src/content/about/history.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/about/hero.md" 
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+      - name: "mission"
+        label: "Mission & Vision"
+        file: "src/content/about/mission-vision.md"
+        fields: [{ name: "body", label: "Content", widget: "markdown" }]
+      - name: "history"
+        label: "Founding History"
+        file: "src/content/about/history.md"
+        fields: [{ name: "body", label: "Content", widget: "markdown" }]
 
+  # --- Get Involved Page ---
   - name: "get-involved-page"
     label: "Page: Get Involved"
     files:
-      - { name: "membership", label: "Membership", file: "src/content/get-involved/membership.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
-      - { name: "donations", label: "Donations", file: "src/content/get-involved/donations.md", fields: [{name: "body", label: "Content", widget: "markdown"}] }
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/get-involved/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+      - name: "membership"
+        label: "Membership"
+        file: "src/content/get-involved/membership.md"
+        fields: [{ name: "body", label: "Content", widget: "markdown" }]
+      - name: "donations"
+        label: "Donations"
+        file: "src/content/get-involved/donations.md"
+        fields: [{ name: "body", label: "Content", widget: "markdown" }]
 
+  # --- Settings Collection ---
   - name: "settings"
     label: "Settings"
     files:

@@ -1,5 +1,6 @@
 import HomePageEvents from "./components/HomePageEvent"; 
 import { tektonFont } from "@/lib/fonts";
+import HeroSection from "./components/HeroSection";
 
 export default function Home() {
 

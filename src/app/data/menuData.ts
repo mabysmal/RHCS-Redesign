@@ -30,8 +30,8 @@ export interface SubPage {
       href: "/news",
     },
     {
-      name: "Photo Gallery",
-      href: "/gallery",
+      name: "History",
+      href: "/history",
     },
     {
       name: "Get Involved",

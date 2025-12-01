@@ -32,4 +32,26 @@ items:
       while wetlands and open meadows support diverse wildlife.
     title: Ecological Value
     image: /uploads/download-1-.png
+  - title: The Arboretum
+    description: >-
+      **A Living Museum**
+
+      Although the original botanical garden collection was moved to UBC in 1916, the arboretum remained. Today, there are around 1,800 trees on these lands that make up this magnificent treasure.
+
+
+      By the time head gardener Jack Renfrew retired in 1947, the arboretum comprised over 160 species and varieties of trees from most continents. The grounds around each building were designed to resemble those of an English country estate.
+
+
+      **The Collections**
+
+      Today, over 1,800 significant trees have been identified and tagged in the Riverview [Heritage Tree Inventory](https://www.arcgis.com/apps/webappviewer/index.html?id=3a38170f84904cdb93df28ed23d0ab58).
+
+
+      * **Significance:**
+
+         A nationally significant collection of trees from around the world.
+      * **Value:**
+
+         Apart from their aesthetic importance, the trees form a valuable gene pool and source of seeds.
+    image: /uploads/arboretum.jpg
 ---

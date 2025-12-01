@@ -53,7 +53,7 @@ collections:
         file: "src/content/tree-tours/visitor-information.md"
         fields:
           - { name: "title", label: "Page Title", widget: "string", default: "Visitor Information" }
-          - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list], hint: "Rules, What to Bring and Info for Visitors" }
+          - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list], hint: "Rules, What to Bring and Info for Visitors" }
       - name: "directions"
         label: "Directions"
         file: "src/content/tree-tours/directions.md"
@@ -63,8 +63,8 @@ collections:
             label: "Directions Content"
             widget: "object"
             fields:
-              - { label: "By Car", name: "by_car", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
-              - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, quote, bulleted-list, numbered-list] }
+              - { label: "By Car", name: "by_car", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
+              - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
       - name: "maps"
         label: "Maps"
         file: "src/content/tree-tours/maps.md"

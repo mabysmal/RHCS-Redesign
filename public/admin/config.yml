@@ -8,8 +8,11 @@ public_folder: "/uploads"
 display_url: https://rhcs.netlify.app/
 logo_url: /logo.png
 
-
 collections:
+  # ========================================
+  # PAGES COLLECTIONS
+  # ========================================
+  
   # --- HOME PAGE ---
   - name: "home_page"
     label: "Page: Home"
@@ -29,7 +32,74 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
-  # --- TREE TOURS PAGE --- 
+
+  # --- ABOUT US PAGE ---
+  - name: "about_us_page"
+    label: "Page: About Us"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/about/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+      - name: "mission"
+        label: "Mission & Vision"
+        file: "src/content/about/mission-vision.md"
+        fields: 
+          - { name: "body", label: "Content", widget: "markdown" }
+      - name: "history"
+        label: "Founding History"
+        file: "src/content/about/history.md"
+        fields: 
+          - { name: "body", label: "Content", widget: "markdown" }
+
+  # --- HISTORY PAGE ---
+  - name: "history_page"
+    label: "Page: History"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/history/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+      - name: "history_items"
+        label: "History Timeline Items"
+        file: "src/content/history/history-items.md"
+        fields:
+          - name: "items"
+            label: "History Items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Button", name: "button", widget: "object", required: false, fields: [
+                  { label: "Text", name: "text", widget: "string", required: false },
+                  { label: "URL", name: "url", widget: "string", required: false }
+                ]}
+
+  # --- TREE TOURS PAGE ---
   - name: "tree_tours_page"
     label: "Page: Tree Tours"
     files:
@@ -52,13 +122,13 @@ collections:
         label: "Visitor Information"
         file: "src/content/tree-tours/visitor-information.md"
         fields:
-          - { name: "title", label: "Page Title", widget: "string", default: "Visitor Information" }
+          - { name: "title", label: "Section Title", widget: "string", default: "Visitor Information" }
           - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list], hint: "Rules, What to Bring and Info for Visitors" }
       - name: "directions"
         label: "Directions"
         file: "src/content/tree-tours/directions.md"
         fields:
-          - { name: "title", label: "Page Title", widget: "string", default: "Directions" }
+          - { name: "title", label: "Section Title", widget: "string", default: "Directions" }
           - name: "directions_content"
             label: "Directions Content"
             widget: "object"
@@ -69,7 +139,7 @@ collections:
         label: "Maps"
         file: "src/content/tree-tours/maps.md"
         fields:
-          - { name: "title", label: "Page Title", widget: "string", default: "Maps" }
+          - { name: "title", label: "Section Title", widget: "string", default: "Maps" }
           - name: "map_list"
             label: "Maps & Links"
             widget: "list"
@@ -89,7 +159,81 @@ collections:
                 widget: "string"
                 required: false
 
-  # --- EVENTS COLLECTION ---
+  # --- NEWS PAGE ---
+  - name: "news_page"
+    label: "Page: News"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/news/hero.md" 
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+
+  # --- PHOTO GALLERY PAGE ---
+  - name: "photo_gallery_page"
+    label: "Page: Photo Gallery"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/photo-gallery/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+
+  # --- GET INVOLVED PAGE ---
+  - name: "get_involved_page"
+    label: "Page: Get Involved"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/get-involved/hero.md"
+        fields:
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
+          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
+              { label: "Text", name: "text", widget: "string", required: false },
+              { label: "URL", name: "url", widget: "string", required: false }
+            ]}
+      - name: "membership"
+        label: "Membership"
+        file: "src/content/get-involved/membership.md"
+        fields: 
+          - { name: "body", label: "Content", widget: "markdown" }
+      - name: "donations"
+        label: "Donations"
+        file: "src/content/get-involved/donations.md"
+        fields: 
+          - { name: "body", label: "Content", widget: "markdown" }
+
+  # ========================================
+  # DYNAMIC CONTENT COLLECTIONS
+  # ========================================
+
+  # --- EVENTS ---
   - name: "events"
     label: "Events"
     folder: "src/content/events"
@@ -112,27 +256,7 @@ collections:
       - { name: "timezone", label: "Timezone", widget: "hidden", default: "America/Vancouver" }
       - { name: "description", label: "Description", widget: "markdown", required: false }
 
-  # --- NEWS PAGE ---
-  - name: "news_page"
-    label: "Page: News"
-    files:
-      - name: "hero"
-        label: "News Listing Hero"
-        file: "src/content/news/hero.md" 
-        fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
-          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
-          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-
-  # NEWS ITEMS (posts)
+  # --- NEWS ITEMS ---
   - name: "news"
     label: "News Items"
     folder: "src/content/news"
@@ -149,27 +273,7 @@ collections:
           { name: "image", label: "Image", widget: "image" }
       - { name: "body", label: "Body", widget: "markdown" }
 
-  # --- PHOTO GALLERY PAGE ---
-  - name: "photo_gallery_page"
-    label: "Page: Photo Gallery"
-    files:
-      - name: "hero"
-        label: "Photo Gallery Listing Hero"
-        file: "src/content/photo-gallery/hero.md"
-        fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
-          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
-          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-
-  # PHOTO GALLERY ALBUMS
+  # --- PHOTO GALLERY ALBUMS ---
   - name: "photo_gallery"
     label: "Photo Gallery Albums"
     folder: "src/content/albums"
@@ -187,99 +291,11 @@ collections:
         field:
           { name: "image", label: "Image", widget: "image" }
 
-  # --- HISTORY PAGE ---
-  - name: "history_page"
-    label: "Page: History"
-    files:
-      - name: "hero"
-        label: "Hero Section"
-        file: "src/content/history/hero.md"
-        fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
-          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
-          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-      - name: "history_items"
-        label: "History Items"
-        file: "src/content/history/history-items.md"
-        fields:
-          - name: "items"
-            label: "History Items"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
-              - { label: "Image", name: "image", widget: "image", required: false }
-              - { label: "Button", name: "button", widget: "object", required: false, fields: [
-                  { label: "Text", name: "text", widget: "string", required: false },
-                  { label: "URL", name: "url", widget: "string", required: false }
-                ]}
+  # ========================================
+  # SITE SETTINGS
+  # ========================================
 
-  # --- ABOUT US PAGE ---
-  - name: "about-us-page"
-    label: "Page: About Us"
-    files:
-      - name: "hero"
-        label: "Hero Section"
-        file: "src/content/about/hero.md"
-        fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
-          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
-          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-      - name: "mission"
-        label: "Mission & Vision"
-        file: "src/content/about/mission-vision.md"
-        fields: [{ name: "body", label: "Content", widget: "markdown" }]
-      - name: "history"
-        label: "Founding History"
-        file: "src/content/about/history.md"
-        fields: [{ name: "body", label: "Content", widget: "markdown" }]
-
-  # --- GET INVOLVED PAGE ---
-  - name: "get-involved-page"
-    label: "Page: Get Involved"
-    files:
-      - name: "hero"
-        label: "Hero Section"
-        file: "src/content/get-involved/hero.md"
-        fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "description", label: "Hero Description", widget: "text", maxlength: 250 }
-          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false }
-          - { label: "Primary Button", name: "primaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-          - { label: "Secondary Button", name: "secondaryButton", widget: "object", required: false, fields: [
-              { label: "Text", name: "text", widget: "string", required: false },
-              { label: "URL", name: "url", widget: "string", required: false }
-            ]}
-      - name: "membership"
-        label: "Membership"
-        file: "src/content/get-involved/membership.md"
-        fields: [{ name: "body", label: "Content", widget: "markdown" }]
-      - name: "donations"
-        label: "Donations"
-        file: "src/content/get-involved/donations.md"
-        fields: [{ name: "body", label: "Content", widget: "markdown" }]
-
-  # --- SETTINGS COLLECTION ---
+  # --- SETTINGS ---
   - name: "settings"
     label: "Settings"
     files:

@@ -52,12 +52,14 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
+      
       - name: "visitor_information"
         label: "Visitor Information"
         file: "src/content/tree-tours/visitor-information.md"
         fields:
           - { name: "title", label: "Section Title", widget: "string", default: "Visitor Information" }
           - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list], hint: "Rules, What to Bring and Info for Visitors" }
+      
       - name: "directions"
         label: "Directions"
         file: "src/content/tree-tours/directions.md"
@@ -69,171 +71,172 @@ collections:
             fields:
               - { label: "By Car", name: "by_car", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
               - { label: "By Public Transit", name: "by_transit", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
-       - name: "maps"
-      label: "Maps & Location"
-      file: "src/content/tree-tours/maps.md"
-      fields:
-        - { name: "title", label: "Section Title", widget: "string", default: "Maps" }
-        
-        # Location Settings Group
-        - label: "Location Settings"
-          name: "location"
-          widget: "object"
-          collapsed: false
-          summary: "Meeting Point: {{fields.address}}"
-          fields:
-            - { 
-                name: "title", 
-                label: "Location Title", 
-                widget: "string", 
-                default: "Location: Henry Esson Young Building",
-                hint: "Title displayed above the map"
-              }
-            - { 
-                name: "googleMapsEmbedUrl", 
-                label: "Google Maps Embed URL", 
-                widget: "string", 
-                required: true,
-                hint: "Go to Google Maps → Search location → Share → Embed a map → Copy the URL from src='...' (the part between quotes)"
-              }
-            - { 
-                name: "address", 
-                label: "Address", 
-                widget: "string", 
-                required: true,
-                maxlength: 100,
-                hint: "Full address of the meeting point (max 100 characters)"
-              }
-            - { 
-                name: "googleMapsDirectUrl", 
-                label: "Google Maps Link", 
-                widget: "string", 
-                required: true,
-                hint: "Go to Google Maps → Search location → Share → Copy link (e.g., https://maps.app.goo.gl/...)"
-              }
-
-              - name: "virtual_tours"
-      label: "Virtual Tours"
-      file: "src/content/tree-tours/virtual-tours.md"
-      fields:
-        - { 
-            name: "sectionTitle", 
-            label: "Section Title", 
-            widget: "string", 
-            default: "Virtual Tree Tour Videos",
-            hint: "Main heading for the virtual tours section"
-          }
-        - name: "videos"
-          label: "Videos"
-          widget: "list"
-          summary: "{{fields.title}}"
-          hint: "Add, edit, or remove virtual tour videos. Videos will appear in the order listed here."
-          fields:
-            - { 
-                label: "Video Title", 
-                name: "title", 
-                widget: "string", 
-                required: true,
-                hint: "Title of the video (displayed above the video player)"
-              }
-            - { 
-                label: "Description", 
-                name: "description", 
-                widget: "text", 
-                required: true,
-                hint: "Brief description of what viewers will see in this video"
-              }
-            - { 
-                label: "YouTube URL", 
-                name: "youtubeUrl", 
-                widget: "string", 
-                required: true,
-                pattern: ['^https:\/\/(www\.)?youtube\.com\/watch\?v=.+|^https:\/\/youtu\.be\/.+', "Must be a valid YouTube URL"],
-                hint: "Paste the full YouTube URL (e.g., https://www.youtube.com/watch?v=NfeEnBo0CwQ or https://youtu.be/NfeEnBo0CwQ)"
-              }
-        
-        # Downloadable Maps List
-        - name: "map_list"
-          label: "Downloadable Maps & Resources"
-          widget: "list"
-          summary: "{{fields.title}}"
-          fields:
-            - { label: "Title", name: "title", widget: "string" }
-            - name: "type"
-              label: "Type of Link"
-              widget: "select"
-              options: ["File Upload (PDF/Image)", "External Link"]
-            - name: "file"
-              label: "Map File"
-              widget: "file"
-              required: false
-            - name: "url"
-              label: "External URL"
-              widget: "string"
-              required: false
+      
+      - name: "maps"
+        label: "Maps & Location"
+        file: "src/content/tree-tours/maps.md"
+        fields:
+          - { name: "title", label: "Section Title", widget: "string", default: "Maps" }
+          
+          # Location Settings Group
+          - label: "Location Settings"
+            name: "location"
+            widget: "object"
+            collapsed: false
+            summary: "Meeting Point: {{fields.address}}"
+            fields:
+              - { 
+                  name: "title", 
+                  label: "Location Title", 
+                  widget: "string", 
+                  default: "Location: Henry Esson Young Building",
+                  hint: "Title displayed above the map"
+                }
+              - { 
+                  name: "googleMapsEmbedUrl", 
+                  label: "Google Maps Embed URL", 
+                  widget: "string", 
+                  required: true,
+                  hint: "Go to Google Maps → Search location → Share → Embed a map → Copy the URL from src='...' (the part between quotes)"
+                }
+              - { 
+                  name: "address", 
+                  label: "Address", 
+                  widget: "string", 
+                  required: true,
+                  maxlength: 100,
+                  hint: "Full address of the meeting point (max 100 characters)"
+                }
+              - { 
+                  name: "googleMapsDirectUrl", 
+                  label: "Google Maps Link", 
+                  widget: "string", 
+                  required: true,
+                  hint: "Go to Google Maps → Search location → Share → Copy link (e.g., https://maps.app.goo.gl/...)"
+                }
+          
+          # Downloadable Maps List
+          - name: "map_list"
+            label: "Downloadable Maps & Resources"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - name: "type"
+                label: "Type of Link"
+                widget: "select"
+                options: ["File Upload (PDF/Image)", "External Link"]
+              - name: "file"
+                label: "Map File"
+                widget: "file"
+                required: false
+              - name: "url"
+                label: "External URL"
+                widget: "string"
+                required: false
+      
+      - name: "virtual_tours"
+        label: "Virtual Tours"
+        file: "src/content/tree-tours/virtual-tours.md"
+        fields:
+          - { 
+              name: "sectionTitle", 
+              label: "Section Title", 
+              widget: "string", 
+              default: "Virtual Tree Tour Videos",
+              hint: "Main heading for the virtual tours section"
+            }
+          - name: "videos"
+            label: "Videos"
+            widget: "list"
+            summary: "{{fields.title}}"
+            hint: "Add, edit, or remove virtual tour videos. Videos will appear in the order listed here."
+            fields:
+              - { 
+                  label: "Video Title", 
+                  name: "title", 
+                  widget: "string", 
+                  required: true,
+                  hint: "Title of the video (displayed above the video player)"
+                }
+              - { 
+                  label: "Description", 
+                  name: "description", 
+                  widget: "text", 
+                  required: true,
+                  hint: "Brief description of what viewers will see in this video"
+                }
+              - { 
+                  label: "YouTube URL", 
+                  name: "youtubeUrl", 
+                  widget: "string", 
+                  required: true,
+                  pattern: ['^https:\/\/(www\.)?youtube\.com\/watch\?v=.+|^https:\/\/youtu\.be\/.+', "Must be a valid YouTube URL"],
+                  hint: "Paste the full YouTube URL (e.g., https://www.youtube.com/watch?v=NfeEnBo0CwQ or https://youtu.be/NfeEnBo0CwQ)"
+                }
 
   # ========================================
   # DYNAMIC CONTENT COLLECTIONS
-  # =======================================
+  # ========================================
 
   # --- EVENTS ---
-- name: "events"
-  label: "Events"
-  folder: "src/content/events"
-  create: true
-  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-  fields:
-    - name: "title"
-      label: "Event Title"
-      widget: "string"
-      required: true
-    
-    - name: "day"
-      label: "Event Date"
-      widget: "datetime"
-      date_format: "YYYY-MM-DD"
-      time_format: false
-      format: "YYYY-MM-DD"
-      required: true
-      hint: "Select the date of the event (events are typically one day every 3 months)"
-    
-    - name: "startTime"
-      label: "Start Time"
-      widget: "string"
-      required: true
-      pattern: ['^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$', "Must be in format HH:MM (e.g., 10:00 or 14:30)"]
-      hint: "Enter start time in 24-hour format (HH:MM), e.g., 10:00"
-    
-    - name: "endTime"
-      label: "End Time"
-      widget: "string"
-      required: true
-      pattern: ['^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$', "Must be in format HH:MM (e.g., 11:00 or 15:30)"]
-      hint: "Enter end time in 24-hour format (HH:MM), e.g., 11:00"
-    
-    - name: "location"
-      label: "Location"
-      widget: "string"
-      required: false
-      default: "Henry Esson Young (H.E.Y) Building"
-    
-    - name: "description"
-      label: "Description"
-      widget: "markdown"
-      required: false
-      modes: [rich_text]
-      buttons: [bold, italic, link, bulleted-list, numbered-list]
-    
-    - name: "timezone"
-      label: "Timezone"
-      widget: "hidden"
-      default: "America/Vancouver"
-    
-    - name: "slug"
-      label: "Slug"
-      widget: "string"
-      required: false
-      hint: "Leave empty to auto-generate from title"
+  - name: "events"
+    label: "Events"
+    folder: "src/content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - name: "title"
+        label: "Event Title"
+        widget: "string"
+        required: true
+      
+      - name: "day"
+        label: "Event Date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+        required: true
+        hint: "Select the date of the event (events are typically one day every 3 months)"
+      
+      - name: "startTime"
+        label: "Start Time"
+        widget: "string"
+        required: true
+        pattern: ['^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$', "Must be in format HH:MM (e.g., 10:00 or 14:30)"]
+        hint: "Enter start time in 24-hour format (HH:MM), e.g., 10:00"
+      
+      - name: "endTime"
+        label: "End Time"
+        widget: "string"
+        required: true
+        pattern: ['^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$', "Must be in format HH:MM (e.g., 11:00 or 15:30)"]
+        hint: "Enter end time in 24-hour format (HH:MM), e.g., 11:00"
+      
+      - name: "location"
+        label: "Location"
+        widget: "string"
+        required: false
+        default: "Henry Esson Young (H.E.Y) Building"
+      
+      - name: "description"
+        label: "Description"
+        widget: "markdown"
+        required: false
+        modes: [rich_text]
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
+      
+      - name: "timezone"
+        label: "Timezone"
+        widget: "hidden"
+        default: "America/Vancouver"
+      
+      - name: "slug"
+        label: "Slug"
+        widget: "string"
+        required: false
+        hint: "Leave empty to auto-generate from title"
 
   # ========================================
   # PAGES COLLECTIONS (CONTINUED)
@@ -295,6 +298,7 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
+      
       - name: "history_items"
         label: "History Timeline Items"
         file: "src/content/history/history-items.md"
@@ -331,11 +335,13 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
+      
       - name: "membership"
         label: "Membership"
         file: "src/content/get-involved/membership.md"
         fields: 
           - { name: "body", label: "Content", widget: "markdown" }
+      
       - name: "donations"
         label: "Donations"
         file: "src/content/get-involved/donations.md"
@@ -361,11 +367,13 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
+      
       - name: "mission"
         label: "Mission & Vision"
         file: "src/content/about/mission-vision.md"
         fields: 
           - { name: "body", label: "Content", widget: "markdown" }
+      
       - name: "history"
         label: "Founding History"
         file: "src/content/about/history.md"

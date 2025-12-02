@@ -14,7 +14,6 @@ export interface Event {
   slug: string;
 }
 
-// Interfaz para el formato antiguo (para retrocompatibilidad)
 interface LegacyEvent {
   title: string;
   startDateTime: string;
@@ -23,7 +22,7 @@ interface LegacyEvent {
   description?: string;
   timezone: string;
   slug: string;
-  [key: string]: unknown; // ← Agregar este index signature
+  [key: string]: unknown;
 }
 
 export interface ParsedEvent extends Event {
@@ -54,7 +53,7 @@ export interface SerializedEvent {
   dayOfWeek: string;
 }
 
-// Interfaz para datos sin tipo del CMS
+//no type interface
 interface UnknownEventData {
   title?: string;
   startDateTime?: string;
@@ -69,18 +68,20 @@ interface UnknownEventData {
   [key: string]: unknown;
 }
 
-// Función helper para verificar si es formato antiguo
+
+
+
+
+
 function isLegacyEvent(data: UnknownEventData): data is LegacyEvent {
   return typeof data.startDateTime === 'string' && typeof data.endDateTime === 'string';
 }
 
-// ... resto del código sin cambios
 function convertLegacyToNewFormat(legacyEvent: LegacyEvent): Event {
   const format = 'yyyy-MM-dd hh:mm a';
   const startDate = DateTime.fromFormat(legacyEvent.startDateTime, format, {
     zone: legacyEvent.timezone
   });
-  
   if (!startDate.isValid) {
     console.error('Cannot convert legacy event:', legacyEvent.title);
     throw new Error('Invalid legacy event format');
@@ -103,9 +104,10 @@ function convertLegacyToNewFormat(legacyEvent: LegacyEvent): Event {
 }
 
 export function getAllEvents(): ParsedEvent[] {
-  const eventsDirectory = path.join(process.cwd(), 'src/content/events');
+  const eventsDirectory = path.join(process.cwd(), 'src/content/tree-tours/events');
 
   if (!fs.existsSync(eventsDirectory)) {
+    console.warn(`Events directory not found: ${eventsDirectory}`);
     return [];
   }
 
@@ -151,11 +153,9 @@ function parseEvent(event: Event): ParsedEvent | null {
     const startDateTimeString = `${event.day} ${event.startTime}`;
     const endDateTimeString = `${event.day} ${event.endTime}`;
     const format = 'yyyy-MM-dd HH:mm';
-    
     const startDate = DateTime.fromFormat(startDateTimeString, format, {
       zone: event.timezone || 'America/Vancouver'
     });
-    
     const endDate = DateTime.fromFormat(endDateTimeString, format, {
       zone: event.timezone || 'America/Vancouver'
     });
@@ -185,6 +185,16 @@ function parseEvent(event: Event): ParsedEvent | null {
     return null;
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 export function getUpcomingEvents(): ParsedEvent[] {
   const allEvents = getAllEvents();

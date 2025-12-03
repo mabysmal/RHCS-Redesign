@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { DateTime } from 'luxon';
+import yaml from 'js-yaml';
 
 export interface Event {
   title: string;
@@ -68,11 +69,6 @@ interface UnknownEventData {
   [key: string]: unknown;
 }
 
-
-
-
-
-
 function isLegacyEvent(data: UnknownEventData): data is LegacyEvent {
   return typeof data.startDateTime === 'string' && typeof data.endDateTime === 'string';
 }
@@ -117,17 +113,19 @@ export function getAllEvents(): ParsedEvent[] {
     .map(name => {
       const filePath = path.join(eventsDirectory, name);
       const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data } = matter(fileContents);
+      const { data } = matter(fileContents, { engines: {
+        yaml: s => yaml.load(s, { schema: yaml.JSON_SCHEMA }) // type is fine
+      }
+
+      });
 
       const slug = data.slug || name.replace(/.md$/, '');
 
       let eventData: Event;
       if (isLegacyEvent(data)) {
-        console.log(`Converting legacy event: ${data.title}`);
         try {
           eventData = convertLegacyToNewFormat({ ...data, slug } as LegacyEvent);
         } catch (error) {
-          console.error(`Failed to convert legacy event ${data.title}:`, error);
           return null;
         }
       } else {
@@ -150,9 +148,9 @@ function parseEvent(event: Event): ParsedEvent | null {
       console.error('Event data:', { day: event.day, startTime: event.startTime, endTime: event.endTime });
       return null;
     }
-    const startDateTimeString = `${event.day} ${event.startTime}`;
-    const endDateTimeString = `${event.day} ${event.endTime}`;
-    const format = 'yyyy-MM-dd HH:mm';
+    const startDateTimeString = `${event.day}`;
+    const endDateTimeString = `${event.day}`;
+    const format = 'yyyy-MM-dd';
     const startDate = DateTime.fromFormat(startDateTimeString, format, {
       zone: event.timezone || 'America/Vancouver'
     });
@@ -185,16 +183,6 @@ function parseEvent(event: Event): ParsedEvent | null {
     return null;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 export function getUpcomingEvents(): ParsedEvent[] {
   const allEvents = getAllEvents();

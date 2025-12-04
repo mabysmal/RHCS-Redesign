@@ -117,8 +117,8 @@ collections:
 
   # --- Tree Tour Calendar (nested under Tree Tours) ---
   - name: "tree_tour_events"
-    label: "Page: Tree Tours → Calendar Events"
-    label_singular: "Calendar Event"
+    label: "Page: Tree Tours Calendar"
+    label_singular: "Tree Tours Event"
     folder: "src/content/tree-tours/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"

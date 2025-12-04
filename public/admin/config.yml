@@ -333,7 +333,6 @@ collections:
         fields:
           - { name: "title", label: "Section Title", widget: "string", default: "Our Mission" }
           - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
-          - { name: "image", label: "Optional Image", widget: "image", required: false, hint: "Optional: Add an inspirational image for this section" }
       
       - name: "vision"
         label: "Vision"
@@ -341,7 +340,6 @@ collections:
         fields:
           - { name: "title", label: "Section Title", widget: "string", default: "Our Vision" }
           - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
-          - { name: "image", label: "Optional Image", widget: "image", required: false, hint: "Optional: Add an inspirational image for this section" }
       
       - name: "what_we_do"
         label: "What We Do"

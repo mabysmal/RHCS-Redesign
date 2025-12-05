@@ -39,11 +39,11 @@ export default async function AboutUsPage() {
       <SectionNav sections={sections} />
 
       <section id="mission-vision" className="py-16 bg-gradient-to-b from-darkcream to-cream">
-        <div className="container mx-auto px-4 max-w-4xl">
+        {/* <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-4xl font-bold mb-8 text-center text-darkgreen">
             Mission & Vision
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-4"> */}
             <Accordion 
               title={missionData.title} 
               htmlContent={missionData.htmlContent}
@@ -53,8 +53,8 @@ export default async function AboutUsPage() {
               title={visionData.title} 
               htmlContent={visionData.htmlContent}
             />
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
       </section>
       <section id="what-we-do" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">

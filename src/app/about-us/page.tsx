@@ -33,8 +33,8 @@ export default async function AboutUsPage() {
     { label: 'Mission & Vision', targetId: 'mission-vision' },
     { label: 'What We Do', targetId: 'what-we-do' },
     { label: 'Why Founded', targetId: 'why-founded' },
-    { label: 'Achievements', targetId: 'achievements' },
     { label: 'Get Involved', targetId: 'get-involved' },
+    { label: 'Achievements', targetId: 'achievements' },
     { label: 'In Memoriam', targetId: 'in-memoriam' },
   ];
 
@@ -113,10 +113,13 @@ export default async function AboutUsPage() {
         </div>
       </section>
 
-      <AchievementsSection data={achievementsData} />
-      
+      {/* Get Involved Section  -*/}
       <GetInvolvedSection data={getInvolvedData} />
       
+      {/* Achievements Section */}
+      <AchievementsSection data={achievementsData} />
+      
+      {/* In Memoriam Section - At the end */}
       <MemoriamSection 
         sectionData={memoriamSectionData} 
         entries={memoriamEntries} 

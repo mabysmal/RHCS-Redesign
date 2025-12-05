@@ -9,5 +9,5 @@ primaryButton:
   url: /tree-tours
 secondaryButton:
   text: Become a Member
-  url: /get-involved/membership
+  url: /get-involved
 ---

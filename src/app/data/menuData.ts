@@ -30,15 +30,15 @@ export interface SubPage {
       href: "/news",
     },
     {
-      name: "The Lands",
+      name: "Riverview Lands",
       href: "/history",
     },
     {
       name: "Get Involved",
       href: "/get-involved",
       subPages: [
-        { name: "Membership", href: "/support", id: "membership" },
-        { name: "Donations", href: "/support", id: "donations" },
+        { name: "Membership", href: "/get-involved", id: "membership" },
+        { name: "Donations", href: "/get-involved#donate", id: "donations" },
         { name: "Volunteering", href: "/support", id: "volunteering" },
       ],
     },
@@ -52,14 +52,14 @@ export interface SubPage {
         { name: "In Memoriam", href: "/about", id: "memoriam" },
       ],
     },
-    {
-      name: "Resource Library",
-      href: "/resources",
-      subPages: [
-        { name: "Reports", href: "/resources", id: "reports" },
-        { name: "Brochures and Books", href: "/resources", id: "brochures" },
-        { name: "Other Blogs", href: "/resources", id: "blogs" },
-        { name: "Newsletter Archive", href: "/resources", id: "newsletter" },
-      ],
-    },
+  //   {
+  //     name: "Resource Library",
+  //     href: "/resources",
+  //     subPages: [
+  //       { name: "Reports", href: "/resources", id: "reports" },
+  //       { name: "Brochures and Books", href: "/resources", id: "brochures" },
+  //       { name: "Other Blogs", href: "/resources", id: "blogs" },
+  //       { name: "Newsletter Archive", href: "/resources", id: "newsletter" },
+  //     ],
+  //   },
   ];

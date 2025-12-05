@@ -294,17 +294,101 @@ collections:
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
       
+      # - name: "why_get_involved"
+      #   label: "Why Get Involved Section"
+      #   file: "src/content/get-involved/why-get-involved.md"
+      #   fields:
+      #     - { name: "title", label: "Section Title", widget: "string", default: "Why Get Involved?" }
+      #     - name: "benefits"
+      #       label: "Benefits"
+      #       widget: "object"
+      #       fields:
+      #         - name: "members"
+      #           label: "For Members"
+      #           widget: "object"
+      #           fields:
+      #             - { name: "icon", label: "Icon", widget: "select", options: ["card", "donation", "volunteer", "email"], default: "card" }
+      #             - { name: "text", label: "Benefit Text", widget: "text" }
+      #         - name: "donors"
+      #           label: "For Donors"
+      #           widget: "object"
+      #           fields:
+      #             - { name: "icon", label: "Icon", widget: "select", options: ["card", "donation", "volunteer", "email"], default: "donation" }
+      #             - { name: "text", label: "Benefit Text", widget: "text" }
+      #         - name: "volunteers"
+      #           label: "For Volunteers"
+      #           widget: "object"
+      #           fields:
+      #             - { name: "icon", label: "Icon", widget: "select", options: ["card", "donation", "volunteer", "email"], default: "volunteer" }
+      #             - { name: "text", label: "Benefit Text", widget: "text" }
+      
       - name: "membership"
-        label: "Membership"
+        label: "Membership Section"
         file: "src/content/get-involved/membership.md"
-        fields: 
-          - { name: "body", label: "Content", widget: "markdown" }
+        fields:
+          - { name: "title", label: "Section Title", widget: "string", default: "Join the Society" }
+          - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
+          - name: "pricing"
+            label: "Membership Pricing"
+            widget: "object"
+            fields:
+              - { name: "title", label: "Pricing Title", widget: "string", default: "Annual Membership" }
+              - { name: "amount", label: "Amount", widget: "string", default: "$5.00" }
+              - { name: "dueDate", label: "Due Date", widget: "string", default: "Due April 1st" }
+          - name: "paymentMethods"
+            label: "Payment Methods"
+            widget: "list"
+            fields:
+              - { name: "method", label: "Payment Method", widget: "string" }
+              - { name: "icon", label: "Icon", widget: "select", options: ["card", "donation", "email"], default: "card" }
+              - { name: "details", label: "Payment Details", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link] }
+          - { name: "note", label: "Additional Note", widget: "text", required: false }
+          - { name: "membershipFormPDF", label: "Membership Form PDF", widget: "file", required: false, hint: "Upload the membership application form" }
       
       - name: "donations"
-        label: "Donations"
+        label: "Donations Section"
         file: "src/content/get-involved/donations.md"
-        fields: 
-          - { name: "body", label: "Content", widget: "markdown" }
+        fields:
+          - { name: "title", label: "Section Title", widget: "string", default: "Support Our Work" }
+          - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
+          - name: "paymentOptions"
+            label: "Payment Options"
+            widget: "list"
+            fields:
+              - { name: "method", label: "Payment Method", widget: "string" }
+              - { name: "icon", label: "Icon", widget: "select", options: ["card", "donation", "email"], default: "donation" }
+              - { name: "details", label: "Payment Details", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link] }
+              - { name: "preferred", label: "Mark as Preferred", widget: "boolean", default: false, required: false }
+          - { name: "taxReceiptNote", label: "Tax Receipt Note", widget: "text", required: false }
+      
+      - name: "volunteer"
+        label: "Volunteer Section"
+        file: "src/content/get-involved/volunteer.md"
+        fields:
+          - { name: "title", label: "Section Title", widget: "string", default: "Volunteer Opportunities" }
+          - { name: "description", label: "Section Description", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
+
+  # --- VOLUNTEER POSITIONS ---
+  - name: "volunteer_positions"
+    label: "Volunteer Positions"
+    label_singular: "Volunteer Position"
+    folder: "src/content/get-involved/volunteer-positions"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    fields:
+      - { name: "title", label: "Position Title", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list], required: true }
+      - { name: "timeCommitment", label: "Time Commitment", widget: "string", required: false, hint: "e.g., 10 hours per week for 3 months" }
+      - name: "contactType"
+        label: "Contact Method"
+        widget: "select"
+        options: ["Email", "External Link"]
+        default: "Email"
+      - { name: "contactEmail", label: "Contact Email", widget: "string", required: false, hint: "e.g., trees@rhcs.org" }
+      - { name: "contactURL", label: "Contact URL", widget: "string", required: false, hint: "e.g., https://forms.gle/1234" }
+      - { name: "icon", label: "Icon", widget: "select", options: ["Events", "Guided Walks", "Safety Support", "Gardening"], default: "Events" }
+      - { name: "order", label: "Display Order", widget: "number", default: 0, value_type: "int", min: 0, hint: "Lower numbers appear first" }
 
       # --- ABOUT US PAGE ---
   - name: "about_us_page"

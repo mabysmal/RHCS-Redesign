@@ -426,7 +426,7 @@ collections:
 
   # # --- PHOTO GALLERY PAGE ---
   # - name: "photo_gallery_page"
-  #   label: "Page: Photo Gallery"
+  #   label: "Page: Photo Gallery"asda
   #   files:
   #     - name: "hero"
   #       label: "Hero Section"

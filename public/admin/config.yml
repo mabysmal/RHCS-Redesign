@@ -352,7 +352,7 @@ collections:
       - name: "contactType"
         label: "Contact Method"
         widget: "select"
-        options: ["Email", "External Link"]
+        options: ["Email" ] #"External Link"
         default: "Email"
       - { name: "contactEmail", label: "Contact Email", widget: "string", required: false, hint: "e.g., trees@rhcs.org" }
       # - { name: "contactURL", label: "Contact URL", widget: "string", required: false, hint: "e.g., https://forms.gle/1234" }

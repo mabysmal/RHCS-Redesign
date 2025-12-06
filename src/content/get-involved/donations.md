@@ -1,18 +1,29 @@
 ---
-title: "Support Our Work"
-body: "RHCS is a registered non-profit society. Donations are used towards BC Housing fees for Tree Tours, public education, social media support, and displays."
+title: Interested in Giving a Donation?
 paymentOptions:
-  - method: "e-Transfer"
-    icon: "email"
-    details: "Send to **td@rhcs.org** (No security question required)"
+  - method: e-Transfer
+    icon: email
+    details: Send to **td@rhcs.org** (No security question required)
     preferred: true
-  - method: "Cheque"
-    icon: "card"
-    details: "Mail to our PO Box"
+  - method: Cheque
+    icon: card
+    details: Mail to our PO Box
     preferred: false
-  - method: "Cash"
-    icon: "donation"
-    details: "Accepted at any RHCS tree tour or event"
+  - method: Cash
+    icon: donation
+    details: Accepted at any RHCS tree tour or event
     preferred: false
-taxReceiptNote: "Tax receipts are issued for donations over $25."
+taxReceiptNote: (Please indicate if you would like a tax receipt, if your
+  donation is over $25.)
 ---
+Riverview Horticultural Centre Society is a registered non-profit society with charitable income status.
+
+Donations are used towards BC Housing fees for Tree Tours, public education, social media support, presentations, displays, newsletters, etc.
+
+
+
+How to Make a Donation
+
+To donate to the Riverview Horticultural Centre Society, choose one of the following payment options.
+
+Note: Paying via e-transfer is the preferred method because it is FREE; PayPal charges a small fee for each transaction.

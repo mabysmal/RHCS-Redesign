@@ -1,11 +1,9 @@
 ---
-title: TEST EVENT - Events Assistant
-description: Assist with displays (setup, take down, staffing) at public events
-  like Treefest.
-timeCommitment: 5-10 hours per event
-contactType: Email
-contactEmail: trees@rhcs.org
-icon: Events
+title: "Test 1 - Events Assistant"
+timeCommitment: "4-5 hours per event"
+contactType: "Email"
+contactEmail: "trees@rhcs.org"
+contactURL: ""
 order: 1
 ---
 
@@ -17,7 +15,8 @@ Help us make our public events a success! As an Events Assistant, you'll help se
 - Answer visitor questions
 - Distribute brochures and materials
 
-**What you'll gain:**
+**What You'll Gain:**
 - Meet fellow nature enthusiasts
 - Learn about local ecology
 - Build event management experience
+...

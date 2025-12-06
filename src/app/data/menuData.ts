@@ -37,9 +37,9 @@ export interface SubPage {
       name: "Get Involved",
       href: "/get-involved",
       subPages: [
-        { name: "Membership", href: "/get-involved", id: "membership" },
-        { name: "Donations", href: "/get-involved#donate", id: "donations" },
-        { name: "Volunteering", href: "/support", id: "volunteering" },
+        { name: "Become a Member", href: "/get-involved", id: "membership" },
+        { name: "Donate", href: "/get-involved#donate", id: "donate" },
+        { name: "Volunteer", href: "/get-involved#volunteer", id: "volunteer" },
       ],
     },
     {

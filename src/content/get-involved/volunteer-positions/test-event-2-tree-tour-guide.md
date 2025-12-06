@@ -1,5 +1,5 @@
 ---
-title: TEST EVENT 2 - Tree Tour Guide
+title: TEST 2 - Tree Tour Guide
 description: ""
 timeCommitment: 2-4 hours per week, on March 21
 contactType: Email

@@ -352,9 +352,9 @@ collections:
       - name: "contactType"
         label: "Contact Method"
         widget: "select"
-        options: ["Email" ] #"External Link"
+        options: ["Email" ], required: true #"External Link"
         default: "Email"
-      - { name: "contactEmail", label: "Contact Email", widget: "string", required: false, hint: "e.g., trees@rhcs.org" }
+      - { name: "contactEmail", label: "Contact Email", widget: "string", required: true, hint: "e.g., trees@rhcs.org" }
       # - { name: "contactURL", label: "Contact URL", widget: "string", required: false, hint: "e.g., https://forms.gle/1234" }
       - { name: "order", label: "Display Order", widget: "number", default: 0, value_type: "int", min: 0, hint: "Lower numbers appear first" }
       - name: "body"
@@ -362,7 +362,7 @@ collections:
         widget: "markdown"
         required: true
         modes: [rich_text]
-        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+        buttons: [bold, italic, link, bulleted-list, numbered-list]
         hint: "Full description of the volunteer position"
 
   # --- ABOUT US PAGE ---

@@ -1,10 +1,16 @@
 ---
 title: Get Involved
-images: []
+images:
+  - /uploads/download.png
+  - /uploads/487504342_1062369175919953_6940874033545627006_n.jpg
+  - /uploads/img_0459.jpeg
+  - /uploads/img_5968.jpg
+  - /uploads/img_5963.jpg
 cards:
   - title: Become a Member
     icon: Membership
-    description: Join our community and support our mission to preserve these historic gardens.
+    description: Join our community and support our mission to preserve these
+      historic gardens.
     url: /get-involved#membership
   - title: Make a Donation
     icon: Donate

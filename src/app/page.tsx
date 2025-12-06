@@ -38,7 +38,7 @@ export default async function Home() {
       <IntroMissionSection data={introMissionData} />
 
       {/* Next Tree Tour Event */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-cream">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-inter font-black text-darkgreen capitalize animate-slide-down mb-8">
             NEXT TREE TOUR
@@ -49,8 +49,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      
 
       {/* RHCS in Media */}
       <MediaSection data={mediaSectionData} />

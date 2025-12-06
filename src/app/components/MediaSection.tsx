@@ -26,7 +26,7 @@ export default function MediaSection({ data }: MediaSectionProps) {
                 <h3 className="text-2xl font-inter font-bold text-darkgreen mb-2">
                   {item.title}
                 </h3>
-                <p className="text-lg font-poppins text-dark/70">
+                <p className="text-lg font-poppins text-dark/70 font-semibold">
                   {item.description}
                 </p>
               </div>

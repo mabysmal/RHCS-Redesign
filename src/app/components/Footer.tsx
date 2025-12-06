@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
     <footer className="bg-darkgreen text-cream">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Organization Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Resources Links */}
+          {/* Resources Links
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-4 font-inter">Resources</h3>
             <ul className="space-y-2">
@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 

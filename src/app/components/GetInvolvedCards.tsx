@@ -62,7 +62,7 @@ export default function GetInvolvedCards({ data }: GetInvolvedCardsProps) {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-base font-poppins text-dark/70 mb-6">
+                  <p className="text-base font-poppins text-dark/70 mb-6  font-semibold">
                     {card.description}
                   </p>
 

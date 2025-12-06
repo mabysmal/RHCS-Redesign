@@ -38,7 +38,7 @@ const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({ data }) => {
         
         {/* Content */}
         <div
-          className="prose prose-sm sm:prose-base lg:prose-lg mx-auto mb-6 sm:mb-8 text-center text-gray-700 font-poppins max-w-3xl"
+          className="prose prose-sm sm:prose-base lg:prose-lg mx-auto mb-6 sm:mb-8 text-center text-gray-700 font-poppins max-w-3xl "
           dangerouslySetInnerHTML={{ __html: data.htmlContent }}
         />
         

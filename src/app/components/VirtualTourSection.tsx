@@ -8,14 +8,14 @@ interface VirtualTourSectionProps {
 
 export default function VirtualTourSection({ data }: VirtualTourSectionProps) {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 bg-cream">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8 animate-slide-down">
           <h2 className="text-3xl md:text-4xl font-inter font-black text-darkgreen mb-4">
             {data.title}
           </h2>
           {data.description && (
-            <p className="text-lg font-poppins text-dark/70 max-w-2xl mx-auto">
+            <p className="text-lg font-poppins font-semibold text-dark/70 max-w-2xl mx-auto">
               {data.description}
             </p>
           )}

@@ -9,7 +9,7 @@ interface IntroMissionSectionProps {
 
 export default function IntroMissionSection({ data }: IntroMissionSectionProps) {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 bg-cream">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Image Carousel */}
@@ -26,7 +26,7 @@ export default function IntroMissionSection({ data }: IntroMissionSectionProps) 
               {data.title}
             </h2>
             <div 
-              className="prose prose-lg max-w-none font-poppins text-dark/80 mb-8"
+              className="prose prose-lg max-w-none font-poppins text-dark/80 mb-8 font-semibold"
               dangerouslySetInnerHTML={{ __html: data.htmlContent }}
             />
             <Link

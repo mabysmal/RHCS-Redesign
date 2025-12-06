@@ -2,29 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getSocialMediaLinks } from '@/utils/socialMediaUtils';
+import { getFooterSettings } from '@/utils/footerUtils'; // Import the new utility
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const socialMedia = getSocialMediaLinks();
+  const footerSettings = getFooterSettings();
 
-  const footerLinks = {
-    explore: [
-      { label: 'Tree Tours', href: '/tree-tours' },
-      { label: 'News & Updates', href: '/news' },
-      { label: 'History', href: '/history' },
-      { label: 'About Us', href: '/about-us' },
-    ],
-    getInvolved: [
-      { label: 'Membership', href: '/get-involved#membership' },
-      { label: 'Donate', href: '/get-involved#donate' },
-      { label: 'Volunteer', href: '/get-involved#volunteer' },
-    ],
-    resources: [
-      { label: 'Riverview Lands', href: '/riverview-lands' },
-      { label: 'Contact Us', href: '/contact' },
-    ],
-  };
-
+  
   const developers = [
     {
       name: 'Mabel Castillo',
@@ -75,7 +60,7 @@ const Footer: React.FC = () => {
     <footer className="bg-darkgreen text-cream">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Organization Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
@@ -88,11 +73,11 @@ const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-sm sm:text-base font-poppins text-cream/90 mb-4">
-              Preserving the historic səmiq̓ʷəʔelə / Riverview Lands and its unique tree arboretum for future generations.
+              {footerSettings.tagline} {/* Use tagline from CMS */}
             </p>
             {/* Social Media Links */}
             <div className="flex gap-4">
-              {socialMediaPlatforms.map((platform) => 
+              {socialMediaPlatforms.map((platform) =>
                 platform.url ? (
                   <a
                     key={platform.name}
@@ -115,8 +100,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-4 font-inter">Explore</h3>
             <ul className="space-y-2">
-              {footerLinks.explore.map((link) => (
-                <li key={link.href}>
+              {footerSettings.exploreLinks.map((link, index) => ( // Use exploreLinks from CMS
+                <li key={index}> {/* Using index as key might be okay for static lists, but unique IDs are better if links can be reordered */}
                   <Link
                     href={link.href}
                     className="text-sm sm:text-base font-poppins text-cream/80 hover:text-cream hover:underline transition-colors"
@@ -132,8 +117,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-4 font-inter">Get Involved</h3>
             <ul className="space-y-2">
-              {footerLinks.getInvolved.map((link) => (
-                <li key={link.href}>
+              {footerSettings.getInvolvedLinks.map((link, index) => ( // Use getInvolvedLinks from CMS
+                <li key={index}>
                   <Link
                     href={link.href}
                     className="text-sm sm:text-base font-poppins text-cream/80 hover:text-cream hover:underline transition-colors"
@@ -145,22 +130,27 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Resources Links
           <div>
-            <h3 className="text-lg sm:text-xl font-bold mb-4 font-inter">Resources</h3>
+            <h3 className="text-lg sm:text-xl font-bold mb-4 font-inter">Contact Us</h3>
             <ul className="space-y-2">
-              {footerLinks.resources.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm sm:text-base font-poppins text-cream/80 hover:text-cream hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+              {footerSettings.contactInfo.map((item, index) => ( 
+                <li key={index}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="text-sm sm:text-base font-poppins text-cream/80 hover:text-cream hover:underline transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <span className="text-sm sm:text-base font-poppins text-cream/80">
+                      {item.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
 
@@ -170,10 +160,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <p className="text-xs sm:text-sm font-opensans text-cream/70 text-center md:text-left">
-              © {currentYear} Riverview Horticultural Centre Society. All rights reserved.
+              © {currentYear} {footerSettings.copyrightText} {/* Use copyrightText from CMS */}
             </p>
 
-            {/* Developer Credits */}
+            {/* Developer Credits*/}
             <div className="text-xs sm:text-sm font-opensans text-cream/70 text-center md:text-right">
               <span>Website designed and developed by </span>
               {developers.map((dev, index) => (

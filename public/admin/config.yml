@@ -477,6 +477,7 @@ collections:
         field:
           { name: "image", label: "Image", widget: "image" }
 
+
   # --- SETTINGS ---
   - name: "settings"
     label: "Settings"
@@ -488,3 +489,31 @@ collections:
           - { name: "facebook", label: "Facebook URL", widget: "string", required: false }
           - { name: "instagram", label: "Instagram URL", widget: "string", required: false }
           - { name: "twitter", label: "Twitter URL", widget: "string", required: false }
+      # FOOTER
+      - name: "footer_settings"
+        label: "Footer Settings"
+        file: "src/content/settings/footer.md" # We'll store it as a Markdown file
+        fields:
+          - { name: "tagline", label: "Organization Tagline", widget: "text", hint: "Short descriptive text about the organization." }
+          - name: "exploreLinks"
+            label: "Explore Links"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: "label", label: "Link Text", widget: "string" }
+              - { name: "href", label: "Link URL", widget: "string" }
+          - name: "getInvolvedLinks"
+            label: "Get Involved Links"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: "label", label: "Link Text", widget: "string" }
+              - { name: "href", label: "Link URL", widget: "string" }
+          - name: "contactInfo"
+            label: "Contact Information"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: "label", label: "Display Text", widget: "string", hint: "E.g., Address, Phone Number, Email" }
+              - { name: "href", label: "Link URL (optional)", widget: "string", required: false, hint: "Keep empty for plain text." }
+          - { name: "copyrightText", label: "Copyright Text", widget: "string", default: "Riverview Horticultural Centre Society. All rights reserved.", hint: "Text to display next to the copyright year." }

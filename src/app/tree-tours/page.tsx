@@ -1,5 +1,7 @@
 import React from 'react';
-import { getSerializedNextEvent, getSerializedOtherUpcomingEvents } from '@/utils/eventUtils';
+import { getSerializedNextEvent,
+  getSerializedOtherUpcomingEvents 
+} from '@/utils/eventUtils';
 import {
   getVisitorInfo,
   getDirections,

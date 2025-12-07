@@ -6,6 +6,8 @@ contactType: Email
 contactEmail: trees@rhcs.org
 order: 2
 ---
+*These are usually arborists who are interested in the range of trees at Riverview, and knowledgeable about different techniques of propagating and caring for them. Someone who has been on a number of walks & shows an interest or knowledge of the trees.* 
+
 **What you'll do:**
 
 * Conduct guided tree tours for small groups
@@ -13,16 +15,12 @@ order: 2
 * Answer visitor questions and encourage curiosity
 * Promote conservation and appreciation of our arboretum
 
-
-
 **Requirements:**
 
 * Interest in trees, plants, or local history
 * Comfortable speaking to groups of 5-20 people
 * Ability to walk outdoors for 1-2 hours
 * Training will be provided!
-
-
 
 **Benefits:**
 

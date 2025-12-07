@@ -1,13 +1,13 @@
 ---
-title: Tree Tour - September
+title: Tree Tour - September 2026
 day: 2026-09-13
 startTime: 13:00
 endTime: 15:00
 location: Serenity Gardens, by the Henry Esson Young Building
 description: >-
   *Please check our website and social media ([Facebook](<>) and
-  [Instagram](<>)) for any last-minute changes, due to unforeseen
-  circumstances.*
+  [Instagram](https://www.instagram.com/riverview_society/)) for any last-minute
+  changes, due to unforeseen circumstances.*
 
 
   **Come out and enjoy the sumiqwuelu/Riverview Lands.**

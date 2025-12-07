@@ -3,7 +3,7 @@ title: Join the Society
 pricing:
   title: Annual Membership
   amount: $5.00
-  dueDate: Due April 1st
+  dueDate: Due January 1st
 paymentMethods:
   - method: e-Transfer
     icon: email

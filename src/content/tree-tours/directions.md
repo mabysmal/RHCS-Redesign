@@ -11,7 +11,7 @@ directions:
 
     4. Find parking where permitted, follow event parking signage.
 
-    5. Meet at the [Henry Esson Young building (H.E.Y.)](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9)[](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9), tour starts here[](https://maps.app.goo.gl/VfwQh3uynFzxe9A39).
+    5. Meet at Serenity Gardens, behind the [Henry Esson Young building (H.E.Y.)](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9)[](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9), tour starts there.
   by_transit: >-
     From Coquitlam Centre Skytrain station, take the **R-169 Braid** bus.
 
@@ -22,5 +22,7 @@ directions:
 
     3. Then walk up **Oak Crescent**.
 
-    4. Turn right on **Kalmia Place**, the [Henry Esson Young building (H.E.Y.)](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9) is on your right, tour starts here.
+    4. Turn right and walk on **Kalmia Place**.
+
+    5. Meet at Serenity Gardens, behind the [Henry Esson Young building (H.E.Y.)](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9)[](https://maps.app.goo.gl/8iTk8BoRvWsxgZjP9), tour starts there
 ---

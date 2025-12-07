@@ -400,7 +400,7 @@ collections:
           - { name: "body", label: "Content", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
       
       - name: "what_we_do"
-        label: "What We Do"
+        label: "Our Purpose"
         file: "src/content/about/what-we-do.md"
         fields:
           - { name: "title", label: "Section Title", widget: "string", default: "What We Do" }

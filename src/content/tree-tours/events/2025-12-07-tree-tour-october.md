@@ -1,9 +1,9 @@
 ---
-title: Tree Tour - July
-day: 2026-07-19
+title: Tree Tour - October
+day: 2026-10-18
 startTime: 13:00
 endTime: 15:00
-location: Serenity Gardens, by the Henry Esson Young (H.E.Y) Building
+location: Serenity Gardens, by the Henry Esson Young Building
 description: >-
   *Please check our website and social media ([Facebook](<>) and
   [Instagram](<>)) for any last-minute changes, due to unforeseen

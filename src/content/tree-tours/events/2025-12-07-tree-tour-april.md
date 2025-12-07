@@ -5,10 +5,8 @@ startTime: 13:00
 endTime: 15:00
 location: Serenity Gardens, by the Henry Esson Young (H.E.Y) Building
 description: >-
-  *Please check our website and social media (
-  [Facebook](https://www.facebook.com/profile.php?id=100064406420900) and
-  [Instagram](https://www.instagram.com/riverview_society/) ) for any
-  last-minute changes, due to unforeseen circumstances.*
+  *Please check our website and social media for any last-minute changes, due to
+  unforeseen circumstances.*
 
 
 

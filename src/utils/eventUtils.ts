@@ -154,12 +154,18 @@ function parseEvent(event: Event): ParsedEvent | null {
       console.error('Event data:', { day: event.day, startTime: event.startTime, endTime: event.endTime });
       return null;
     }
-    const startDateTimeString = `${event.day}`;
-    const endDateTimeString = `${event.day}`;
-    const format = 'yyyy-MM-dd';
+
+    // Combine date with time strings
+    const startDateTimeString = `${event.day} ${event.startTime}`;
+    const endDateTimeString = `${event.day} ${event.endTime}`;
+    
+    // Updated format to include time
+    const format = 'yyyy-MM-dd HH:mm';
+    
     const startDate = DateTime.fromFormat(startDateTimeString, format, {
       zone: event.timezone || 'America/Vancouver'
     });
+    
     const endDate = DateTime.fromFormat(endDateTimeString, format, {
       zone: event.timezone || 'America/Vancouver'
     });

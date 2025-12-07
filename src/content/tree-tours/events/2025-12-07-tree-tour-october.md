@@ -1,5 +1,5 @@
 ---
-title: Tree Tour - October
+title: Tree Tour - October 2026
 day: 2026-10-18
 startTime: 13:00
 endTime: 15:00

@@ -1,5 +1,5 @@
 ---
-title: Tree Tour - August
+title: Tree Tour - August 2026
 day: 2026-08-16
 startTime: 13:00
 endTime: 15:00

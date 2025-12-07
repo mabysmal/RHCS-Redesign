@@ -1,5 +1,5 @@
 ---
-title: Tree Tour - June
+title: Tree Tour - June 2026
 day: 2026-06-14
 startTime: 13:00
 endTime: 15:00

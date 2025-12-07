@@ -7,17 +7,11 @@ order: 1
 ---
 *Join our dedicated team in maintaining the beauty and health of our historic gardens and landscapes.*
 
-
-
 **Tasks include:**
 
 * Weeding, mulching, and general garden care
 * Pruning and deadheading flowers
-* Trail maintenance and litter cleanup
-* Assisting with seasonal plantings
-* Light landscaping projects
-
-
+* Watering during dry spells
 
 **What we're looking for:**
 
@@ -26,8 +20,6 @@ order: 1
 * Reliability and commitment to regular volunteering
 * Gardening experience helpful but not required
 
-
-
 **What you'll gain:**
 
 * Hands-on gardening experience and skill development
@@ -35,6 +27,4 @@ order: 1
 * Fresh air, exercise, and connection with nature
 * Satisfaction of preserving a community treasure
 
-
-
-*Tools and gloves provided. Please dress for outdoor work.*
+*Ask for providing tools and gloves. Please dress for outdoor work.*

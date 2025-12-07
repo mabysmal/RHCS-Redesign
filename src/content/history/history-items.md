@@ -146,5 +146,5 @@ items:
 
       \- Gay Mitchel
     title: Finnie’s Garden Shed Botanical Painting / Mural
-    image: /uploads/finniesmural.jpeg
+    image: /uploads/finniesmural1.jpeg
 ---

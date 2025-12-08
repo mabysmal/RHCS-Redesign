@@ -4,16 +4,22 @@ import React, { useState } from 'react';
 import { VolunteerSection as VolunteerSectionData, VolunteerPosition } from '@/utils/getInvolved';
 import Modal from './Modal';
 import Pagination from './Pagination';
+import ImageCarousel from './ImageCarousel';
 import { marked } from 'marked';
 
 interface VolunteerSectionProps {
   sectionData: VolunteerSectionData;
   positions: VolunteerPosition[];
+  carouselImages?: { src: string; width: number; height: number; }[];
 }
 
 const ITEMS_PER_PAGE = 6;
 
-const VolunteerSection: React.FC<VolunteerSectionProps> = ({ sectionData, positions }) => {
+const VolunteerSection: React.FC<VolunteerSectionProps> = ({ 
+  sectionData, 
+  positions,
+  carouselImages = []
+}) => {
   const [selectedPosition, setSelectedPosition] = useState<VolunteerPosition | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -42,6 +48,16 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({ sectionData, positi
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center text-darkgreen font-inter">
           {sectionData.title}
         </h2>
+
+        {/* Image Carousel */}
+        {carouselImages.length > 0 && (
+          <div className="mb-8 sm:mb-10 md:mb-12 animate-fade-in">
+            <ImageCarousel 
+              images={carouselImages} 
+              altText="Volunteer Activities" 
+            />
+          </div>
+        )}
 
         {/* Description */}
         {sectionData.description && (

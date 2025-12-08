@@ -20,6 +20,9 @@ import GoogleMap from '../components/GoogleMap';
 import { DocumentTextIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import HeroSection from '../components/HeroSection';
 import { getHeroSectionData } from '@/utils/heroUtils';
+import ImageCarousel from '../components/ImageCarousel';
+import { getTreeToursCarouselImages } from '@/utils/treeToursUtils';
+import { getImagesWithDimensions } from '@/utils/imageUtils';
 
 interface DirectionMethodProps {
   icon: React.ReactNode;
@@ -109,6 +112,8 @@ export default async function TreeToursPage() {
   const directions = getDirections();
   const maps = getMaps();
   const virtualTours = getVirtualTours();
+  const carouselImagesData = getTreeToursCarouselImages();
+  const carouselImages = await getImagesWithDimensions(carouselImagesData.images);
 
   const treeTourSections = [
     { label: "Tree Tours", targetId: "tree-tours" },
@@ -145,9 +150,20 @@ export default async function TreeToursPage() {
       <div className="bg-cream">
         {/* === TREE TOURS === */}
         <PageSection id="tree-tours">
+          {/* Image Carousel */}
+          {carouselImages.length > 0 && (
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <ImageCarousel 
+                images={carouselImages} 
+                altText="Tree Tour" 
+              />
+            </div>
+          )}
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-inter font-bold text-darkgreen capitalize animate-slide-down mb-6 sm:mb-8 text-center">
             NEXT TREE TOUR
           </h2>
+          
           {!nextEvent ? (
             <ComingSoon />
           ) : (

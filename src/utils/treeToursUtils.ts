@@ -3,6 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 
+export interface CarouselImages {
+  images: string[];
+}
+
 export interface VisitorInfo {
   title: string;
   htmlContent: string;
@@ -86,6 +90,28 @@ function convertToEmbedUrl(youtubeUrl: string): string {
   
   return youtubeUrl;
 }
+
+export function getTreeToursCarouselImages(): CarouselImages {
+  const fullPath = path.join(contentDirectory, 'carousel-images.md');
+  
+  if (!fs.existsSync(fullPath)) {
+    console.warn(`Warning: Tree tours carousel images file not found: ${fullPath}`);
+    return { images: [] };
+  }
+  
+  try {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data } = matter(fileContents);
+    
+    const images = (data.images || []).map((item: { image: string }) => item.image);
+    
+    return { images };
+  } catch (error) {
+    console.error('Error reading tree tours carousel images:', error);
+    return { images: [] };
+  }
+}
+
 
 export function getVisitorInfo(): VisitorInfo {
   const fullPath = path.join(contentDirectory, 'visitor-information.md');

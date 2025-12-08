@@ -119,6 +119,18 @@ collections:
               { label: "Text", name: "text", widget: "string", required: false },
               { label: "URL", name: "url", widget: "string", required: false }
             ]}
+      - name: "tree_tours_carousel"
+        label: "Tree Tours - Carousel Images"
+        file: "src/content/tree-tours/carousel-images.md"
+        fields:
+          - name: "images"
+            label: "Carousel Images"
+            widget: "list"
+            summary: "{{fields.image}}"
+            min: 1
+            hint: "Images for the Tree Tours section carousel"
+            field:
+              { name: "image", label: "Image", widget: "image" }
       
       - name: "visitor_information"
         label: "Visitor Information"
@@ -338,6 +350,18 @@ collections:
           - { name: "title", label: "Section Title", widget: "string", default: "Volunteer Opportunities" }
           - { name: "description", label: "Section Description", widget: "markdown", modes: [rich_text], buttons: [bold, italic, link, bulleted-list, numbered-list] }
 
+      - name: "volunteer_carousel"
+        label: "Volunteer Section - Carousel Images"
+        file: "src/content/get-involved/volunteer-carousel.md"
+        fields:
+          - name: "images"
+            label: "Carousel Images"
+            widget: "list"
+            summary: "{{fields.image}}"
+            min: 1
+            hint: "Images for the Volunteer section carousel"
+            field:
+              { name: "image", label: "Image", widget: "image" }
     # --- VOLUNTEER POSITIONS ---
   - name: "volunteer_positions"
     label: "Volunteer Positions"

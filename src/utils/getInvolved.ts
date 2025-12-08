@@ -228,3 +228,28 @@ export function getVolunteerPositions(): VolunteerPosition[] {
     return [];
   }
 }
+
+export interface CarouselImages {
+  images: string[];
+}
+
+export function getVolunteerCarouselImages(): CarouselImages {
+  const fullPath = path.join(contentDirectory, 'volunteer-carousel.md');
+  
+  if (!fs.existsSync(fullPath)) {
+    console.warn(`Warning: Volunteer carousel images file not found: ${fullPath}`);
+    return { images: [] };
+  }
+  
+  try {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data } = matter(fileContents);
+    
+    const images = (data.images || []).map((item: { image: string }) => item.image);
+    
+    return { images };
+  } catch (error) {
+    console.error('Error reading volunteer carousel images:', error);
+    return { images: [] };
+  }
+}

@@ -2,9 +2,11 @@ import React from 'react';
 import { MembershipData } from '@/utils/getInvolved';
 import Image from 'next/image';
 import Link from 'next/link';
+import ImageCarousel from './ImageCarousel';
 
 interface MembershipSectionProps {
   data: MembershipData;
+  carouselImages?: { src: string; width: number; height: number; }[];
 }
 
 // Mapeo de nombres de iconos a rutas de archivos SVG
@@ -14,13 +16,24 @@ const iconMap: Record<string, string> = {
   email: '/e-Transfer.svg',
 };
 
-const MembershipSection: React.FC<MembershipSectionProps> = ({ data }) => {
+const MembershipSection: React.FC<MembershipSectionProps> = ({ data, carouselImages = [] }) => {
   return (
     <section id="membership" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center text-darkgreen font-inter">
           {data.title}
         </h2>
+
+        {/* Image Carousel - only show if images are provided */}
+        {carouselImages && carouselImages.length > 0 && (
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <ImageCarousel
+              images={carouselImages}
+              altText="Membership and Community"
+              maxWidth="60%"
+            />
+          </div>
+        )}
 
         {/* Content */}
         <div

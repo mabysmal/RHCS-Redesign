@@ -15,8 +15,8 @@ interface VolunteerSectionProps {
 
 const ITEMS_PER_PAGE = 6;
 
-const VolunteerSection: React.FC<VolunteerSectionProps> = ({ 
-  sectionData, 
+const VolunteerSection: React.FC<VolunteerSectionProps> = ({
+  sectionData,
   positions,
   carouselImages = []
 }) => {
@@ -49,18 +49,8 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({
           {sectionData.title}
         </h2>
 
-        
-
-        {/* Description */}
-        {sectionData.description && (
-          <div
-            className="prose prose-sm sm:prose-base lg:prose-lg mx-auto mb-10 sm:mb-12 text-gray-700 font-poppins text-center max-w-3xl"
-            dangerouslySetInnerHTML={{ __html: marked.parse(sectionData.description) as string }}
-          />
-        )}
-
-        {/*Image Carousel*/}
-        {carouselImages.length > 0 && (
+        {/* Carousel - only show if images are provided */}
+        {carouselImages && carouselImages.length > 0 && (
           <div className="mb-8 sm:mb-10 md:mb-12">
             <ImageCarousel
               images={carouselImages}
@@ -68,6 +58,14 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({
               maxWidth="60%"
             />
           </div>
+        )}
+
+        {/* Description */}
+        {sectionData.description && (
+          <div
+            className="prose prose-sm sm:prose-base lg:prose-lg mx-auto mb-10 sm:mb-12 text-gray-700 font-poppins text-center max-w-3xl"
+            dangerouslySetInnerHTML={{ __html: marked.parse(sectionData.description) as string }}
+          />
         )}
 
         {/* Positions Grid */}

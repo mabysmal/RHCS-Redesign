@@ -13,7 +13,7 @@ import {
   getVolunteerPositions,
   getVolunteerCarouselImages,
 } from '@/utils/getInvolved';
-import { getImagesWithDimensions } from '@/utils/imageUtils'; // Change this line
+import { getImagesWithDimensions } from '@/utils/imageUtils';
 
 export default async function GetInvolvedPage() {
   const heroData = await getHeroSectionData('src/content/get-involved/hero.md');
@@ -34,19 +34,20 @@ export default async function GetInvolvedPage() {
     <main className="min-h-screen bg-cream">
       <HeroSection data={heroData} />
       <SectionNav sections={sections} />
-      
-      
-      {/* Membership Section */}
-      <MembershipSection data={membershipData} />
+
+      {/* Membership Section - with carousel inside */}
+      <MembershipSection 
+        data={membershipData}
+        carouselImages={volunteerCarouselImages}
+      />
       
       {/* Donations Section */}
       <DonationsSection data={donationsData} />
       
-      {/* Volunteer Section */}
+      {/* Volunteer Section - without carousel */}
       <VolunteerSection
         sectionData={volunteerSectionData}
         positions={volunteerPositions}
-        carouselImages={volunteerCarouselImages}
       />
     </main>
   );

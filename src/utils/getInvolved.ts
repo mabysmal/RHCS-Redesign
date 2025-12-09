@@ -245,7 +245,16 @@ export function getVolunteerCarouselImages(): CarouselImages {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
     
-    const images = (data.images || []).map((item: { image: string }) => item.image);
+    // Validar que images existe y es un array
+    if (!data.images || !Array.isArray(data.images)) {
+      console.warn('No images array found in volunteer carousel data');
+      return { images: [] };
+    }
+    
+    // Filtrar items vacíos o sin propiedad image
+    const images = data.images
+      .filter((item: { image?: string }) => item && item.image)
+      .map((item: { image: string }) => item.image);
     
     return { images };
   } catch (error) {

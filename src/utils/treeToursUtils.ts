@@ -102,8 +102,15 @@ export function getTreeToursCarouselImages(): CarouselImages {
   try {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
-    
-    const images = (data.images || []).map((item: { image: string }) => item.image);
+
+    if (!data.images || !Array.isArray(data.images)) {
+      console.warn('No images array found in tree tours carousel data');
+      return { images: [] };
+    }
+
+    const images = data.images
+      .filter((item: { image?: string }) => item && item.image)
+      .map((item: { image: string }) => item.image);
     
     return { images };
   } catch (error) {

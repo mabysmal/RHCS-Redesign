@@ -17,7 +17,7 @@ note: |-
   Riverview Horticultural Centre Society
   Como Lake RPO, P.O. Box 64616
   Coquitlam, B. C., V3J 7V7
-  Phone: (604) 290-9910
+  Phone: (604)290-9910
   with a completed Membership / Renewal form
 membershipFormPDF: /uploads/202_membership-half.pdf
 ---

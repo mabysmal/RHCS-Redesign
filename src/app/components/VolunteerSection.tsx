@@ -49,15 +49,15 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({
           {sectionData.title}
         </h2>
 
-        {/* Image Carousel */}
-        {carouselImages.length > 0 && (
-          <div className="mb-8 sm:mb-10 md:mb-12 animate-fade-in">
-            <ImageCarousel 
-              images={carouselImages} 
-              altText="Volunteer Activities" 
-            />
-          </div>
-        )}
+        {/* Carousel - solo mostrar si hay imágenes */}
+          {carouselImages.length > 0 && (
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <ImageCarousel
+                images={carouselImages}
+                altText="Volunteer Activities"
+              />
+            </div>
+          )}
 
         {/* Description */}
         {sectionData.description && (

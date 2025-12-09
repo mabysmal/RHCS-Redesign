@@ -150,15 +150,15 @@ export default async function TreeToursPage() {
       <div className="bg-cream">
         {/* === TREE TOURS === */}
         <PageSection id="tree-tours">
-          {/* Image Carousel */}
-          {carouselImages.length > 0 && (
-            <div className="mb-8 sm:mb-10 md:mb-12">
-              <ImageCarousel 
-                images={carouselImages} 
-                altText="Tree Tour" 
-              />
-            </div>
-          )}
+          {/* Image Carousel*/}
+            {carouselImages.length > 0 && (
+              <div className="mb-8 sm:mb-10 md:mb-12">
+                <ImageCarousel
+                  images={carouselImages}
+                  altText="Tree Tour"
+                />
+              </div>
+            )}
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-inter font-bold text-darkgreen capitalize animate-slide-down mb-6 sm:mb-8 text-center">
             NEXT TREE TOUR

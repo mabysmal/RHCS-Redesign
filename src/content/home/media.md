@@ -1,7 +1,7 @@
 ---
-title: Our Supporters
+title: Thank You!
 mediaItems:
-  - title: THANK YOU To Our Major Supporters!
+  - title: City of Coquitlam & Burke Mountain Naturalists
     description: >-
       The Riverview Horticultural Centre Society wishes to acknowledge the
       generous financial support of the City of Coquitlam who have awarded us

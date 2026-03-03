@@ -1,26 +1,23 @@
 ---
-title: RHCS in Media
+title: Our Supporters
 mediaItems:
-  - title: "CBC News: Tree Tours Under Threat at Riverview"
-    description: CBC News report from October 2023 on BC Housing's fee requirements
-      that threatened our free tree walking tours. The coverage highlights our
-      volunteers' dedication to preserving and sharing Riverview's historic tree
-      collection with the community, and the importance of keeping these
-      educational tours accessible to all.
+  - title: THANK YOU To Our Major Supporters!
+    description: >-
+      The Riverview Horticultural Centre Society wishes to acknowledge the
+      generous financial support of the City of Coquitlam who have awarded us
+      two Spirit of Coquitlam Grants in the past several years.  These Grants
+      have been used to assist with the costs related to our annual Tree Tours
+      on the səmiq̓ʷəʔelə/Riverview Lands.  Spirit Grants have ensured that our
+      Society can begin its 34th year of offering free tree tours that educate
+      residents of all ages about the world-class collection of rare trees
+      planted on the səmiq̓ʷəʔelə site.  We are very grateful for the City of
+      Coquitlam's continued support. 
+
+
+      The RHCS also wishes to sincerely thank the Burke Mountain Naturalists for the generous financial support we have received recently from them.  The Naturalists are well-known throughout the Tri-Cities and beyond for their steadfast stewardship of our natural surroundings and the RHCS was honoured to be chosen as their designated charity in December 2025.
+
+
+      Thank you, Burke Mountain Naturalists!
     type: YouTube Video
-    youtubeUrl: https://youtu.be/P5mpdufRjhU?si=a3UtMFQjl_GCzkv0
-  - title: The Battle to Preserve Public Free Tree Tours at Riverview
-    description: In this radio interview, RHCS 2023 - 2025 President Marilyne
-      Anderson and Membership Director Mick Short discuss the organization's 30+
-      year history of offering free educational tree tours and the challenges
-      posed by BC Housing's new fee requirements. They explain the historical
-      significance of Riverview's arboretum, Canada's first true botanical
-      garden established by provincial botanist John Davidson in 1911, and share
-      concerns about additional barriers being placed on public access,
-      including the closure of public washrooms and removal of volunteer-built
-      infrastructure. The interview provides important context about why these
-      tours matter and the society's commitment to continuing public education
-      about this irreplaceable living museum.
-    type: Audio
-    audioFile: /uploads/rchs.mp3
+    youtubeUrl: ""
 ---

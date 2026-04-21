@@ -72,9 +72,6 @@ export default async function Home() {
       {/* RHCS in Media */}
       <MediaSection data={mediaSectionData} />
 
-      {/* Virtual Tree Tour */}
-      <VirtualTourSection data={virtualTourData} />
-
       {/* Get Involved Cards */}
       <GetInvolvedCards data={getInvolvedCardsData} />
     </div>

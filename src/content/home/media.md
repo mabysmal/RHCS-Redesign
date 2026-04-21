@@ -12,6 +12,7 @@ mediaItems:
       planted on the səmiq̓ʷəʔelə site.  We are very grateful for the City of
       Coquitlam's continued support. "
     type: Image
+    imageFile: /uploads/spirit of coquitlam.png
   - description: >-
       The RHCS wishes to sincerely thank the Burke Mountain Naturalists for the
       generous financial support we have received recently from them.  The
@@ -23,4 +24,5 @@ mediaItems:
       Thank you, Burke Mountain Naturalists!
     title: Burke Mountain Naturalists
     type: Image
+    imageFile: /uploads/burke naturalists.jpg
 ---

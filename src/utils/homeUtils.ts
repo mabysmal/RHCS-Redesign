@@ -22,9 +22,10 @@ export interface IntroMissionData {
 export interface MediaItem {
   title: string;
   description: string;
-  type: 'YouTube Video' | 'Audio';
+  type: 'YouTube Video' | 'Audio' | 'Image';
   youtubeUrl?: string;
   audioFile?: string;
+  imageFile?: string;
 }
 
 export interface MediaSectionData {
